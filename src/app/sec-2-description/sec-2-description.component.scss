@@ -1,0 +1,118 @@
+.about_me_section {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  // width: 100%;
+  height: 100vh;
+  color: #c896fa;
+}
+
+.ellipse_mittel {
+  position: absolute;
+  left: 700px;
+  top: -103px;
+  clip-path: inset(50% 0 0 0);
+  z-index: 20;
+}
+
+.ellipse_klein {
+  position: absolute;
+  right: 150px;
+  z-index: 20;
+  top: 60px;
+}
+
+.ellipse_klein2 {
+  position: absolute;
+  left: 150px;
+  z-index: 20;
+  bottom: 0;
+}
+
+.left_content_about_me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  padding: 80px;
+
+  p {
+    font-family: "Baloo", sans-serif;
+    font-size: 80px;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 65px;
+    text-align: center;
+  }
+
+  h5 {
+    font-size: 45px;
+    margin: 20px;
+    font-family: "Baloo", sans-serif;
+  }
+
+  .ich_bin_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .short_infos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    width: 200px;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .pc_img {
+    padding-bottom: 20px;
+    transition: opacity 0.3s ease;
+    width: 59px;
+    height: 52px;
+  }
+
+  .koffer_img {
+    width: 30px;
+    height: 49px;
+  }
+}
+
+.right_content_about_me {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  flex: 1;
+  font-size: 23px;
+  padding: 80px;
+
+  p {
+    color: #3b3b3b;
+  }
+
+  .message_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 254px;
+    height: 58px;
+    border-radius: 10px;
+    border: 2px solid #c896fa;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #c896fa;
+      color: white;
+    }
+  }
+}

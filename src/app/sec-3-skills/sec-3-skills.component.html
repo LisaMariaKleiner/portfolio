@@ -1,0 +1,19 @@
+<div id="skill_stack" class="skills_container no-select">
+  <div class="skills_content_container">
+    <div class="title_skills">
+      <p>Skill set</p>
+    </div>
+
+    <div class="skill_img_container">
+      <div
+        class="skill_stack"
+        *ngFor="let item of portfolioItems"
+        [class.animate]="isVisible"
+        #stackElement
+      >
+        <img [src]="item.img" />
+        <p>{{ item.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { merge } from 'rxjs';
+
+@Component({
+  selector: 'app-sec-6-contact',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './sec-6-contact.component.html',
+  styleUrls: ['./sec-6-contact.component.scss'],
+})
+export class Sec6ContactComponent {
+  readonly email = new FormControl('', [Validators.required, Validators.email]);
+
+  errorMessage = signal('');
+
+  constructor() {
+    merge(this.email.statusChanges, this.email.valueChanges)
+      .pipe(takeUntilDestroyed())
+      .subscribe(() => this.updateErrorMessage());
+  }
+
+  updateErrorMessage() {
+    if (this.email.hasError('required')) {
+      this.errorMessage.set('You must enter a value');
+    } else if (this.email.hasError('email')) {
+      this.errorMessage.set('Not a valid email');
+    } else {
+      this.errorMessage.set('');
+    }
+  }
+
+  getErrorMessage() {
+    return this.errorMessage();
+  }
+}

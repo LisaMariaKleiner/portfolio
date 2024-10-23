@@ -1,0 +1,10 @@
+<svg width="175" height="395" viewBox="0 0 175 395" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="-22.6426" cy="197.358" r="196.66" transform="rotate(81.5728 -22.6426 197.358)" fill="url(#paint0_radial_257_646)"/>
+  <defs>
+    <radialGradient id="paint0_radial_257_646" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-141.476 88.886) rotate(35.4598) scale(358.373)">
+      <stop offset="0.0625" stop-color="#E5B5F2"/> <!-- Heller Fliederton -->
+      <stop offset="0.515625" stop-color="#E5B5F2"/> <!-- Heller Fliederton -->
+      <stop offset="1" stop-color="#A368B0"/> <!-- Dunklerer Fliederton -->
+    </radialGradient>
+  </defs>
+</svg>

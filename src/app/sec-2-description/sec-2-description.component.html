@@ -1,0 +1,67 @@
+<div id="about_me_section" class="about_me_section no-select">
+  <img
+    class="ellipse_mittel"
+    src="../../assets/img/Ellipse-mittel.svg"
+    alt="bubble"
+  />
+
+  <img
+    class="ellipse_klein"
+    src="../../assets/img/Ellipse-klein.svg"
+    alt="bubble"
+  />
+
+  <img
+    class="ellipse_klein2"
+    src="../../assets/img/Ellipse-mittel.svg"
+    alt="bubble"
+  />
+
+  <div class="left_content_about_me">
+    <p>Lass uns zusammen durchstarten</p>
+    <h5>Ich bin</h5>
+    <div class="ich_bin_container">
+      <div class="short_infos">
+        <img
+          [src]="images.location.img"
+          (mouseenter)="changeImage('location', images.location.hoverImg)"
+          (mouseleave)="resetImage('location')"
+        />
+        <span>wohnhaft in Blankenheim</span>
+      </div>
+      <div class="short_infos">
+        <img
+          class="pc_img"
+          [src]="images.remote.img"
+          (mouseenter)="changeImage('remote', images.remote.hoverImg)"
+          (mouseleave)="resetImage('remote')"
+        />
+        <span>offen für Remote</span>
+      </div>
+      <div class="short_infos">
+        <img
+          class="koffer_img"
+          [src]="images.koffer.img"
+          (mouseenter)="changeImage('koffer', images.koffer.hoverImg)"
+          (mouseleave)="resetImage('koffer')"
+        />
+        <span>bereit temporär zu verreisen</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="right_content_about_me">
+    <p>
+      Als Entwicklerin liegt mein Fokus darauf, kreative, nutzerfreundliche und
+      performante Webanwendungen zu schaffen. Nach meiner Ausbildung und
+      praktischer Erfahrung in Kundenprojekten brenne ich dafür, mich ständig
+      weiterzuentwickeln und neue Technologien zu entdecken. <br /><br />
+      Ich schätze die Herausforderung, komplexe Probleme zu lösen und dabei
+      innovative Lösungen zu finden. Teamarbeit, Eigeninitiative und der Drang,
+      über mich hinauszuwachsen, treiben mich täglich an. Mit meiner
+      Begeisterung für die Entwicklung bringe ich frischen Wind und Tatkraft in
+      jedes Projekt. Lasst uns gemeinsam digitale Ideen in die Tat umsetzen!
+    </p>
+    <span class="message_button">Schicke eine Nachricht</span>
+  </div>
+</div>
