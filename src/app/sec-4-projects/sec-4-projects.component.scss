@@ -38,6 +38,12 @@ body {
   left: 700px;
 }
 
+.pollo_loco_ellipse_klein {
+  position: absolute;
+  left: 700px;
+  margin-top: 400px;
+}
+
 .ellipse_mittel {
   position: absolute;
   left: 1000px;
@@ -159,14 +165,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   flex: 1;
 
   .handyPolloLoco {
-    width: 500px;
+    width: 250px;
     border-bottom-right-radius: 20px;
-    position: absolute;
-    top: 4288px;
-    right: 120px;
 
     &:hover {
       transform: scale(1.4);
@@ -191,10 +195,18 @@ body {
   top: 2900px;
 }
 
+.pollo_loco_halb_ellipse {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  height: 600px;
+  top: 3700px;
+}
+
 .dreiviertel_ellipse {
   position: absolute;
-  top: 3500px;
+  top: 3000px;
   right: 0;
   z-index: -1;
-  width: 650px;
+  width: 350px;
 }

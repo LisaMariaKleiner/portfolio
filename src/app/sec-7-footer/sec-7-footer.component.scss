@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40vh;
+  background-color: #c896fa;
+
+  span {
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  .info_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+}

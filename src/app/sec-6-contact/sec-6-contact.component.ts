@@ -1,39 +1,69 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { LegalNoticeDialogComponent } from '../legal-notice-dialog/legal-notice-dialog.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { merge } from 'rxjs';
 
 @Component({
   selector: 'app-sec-6-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ReactiveFormsModule, MatTooltipModule, CommonModule],
   templateUrl: './sec-6-contact.component.html',
   styleUrls: ['./sec-6-contact.component.scss'],
 })
-export class Sec6ContactComponent {
-  readonly email = new FormControl('', [Validators.required, Validators.email]);
+export class Sec6ContactComponent implements OnInit {
+  form!: FormGroup;
 
-  errorMessage = signal('');
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) {}
 
-  constructor() {
-    merge(this.email.statusChanges, this.email.valueChanges)
-      .pipe(takeUntilDestroyed())
-      .subscribe(() => this.updateErrorMessage());
+  openLegalNoticeDialog(): void {
+    this.dialog.open(LegalNoticeDialogComponent, {
+      width: '400px',
+    });
   }
 
-  updateErrorMessage() {
-    if (this.email.hasError('required')) {
-      this.errorMessage.set('You must enter a value');
-    } else if (this.email.hasError('email')) {
-      this.errorMessage.set('Not a valid email');
+  ngOnInit(): void {
+    this.buildForm();
+  }
+
+  private buildForm(): void {
+    this.form = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: [''],
+      message: ['', Validators.required],
+      privacyPolicy: [false, Validators.requiredTrue],
+    });
+  }
+
+  send(): void {
+    if (this.form.valid) {
+      const formData = this.form.value;
+
+      // Senden der Formulardaten an den Node.js-Server
+      this.http.post('http://localhost:3000/send-email', formData).subscribe(
+        () => {
+          this.snackBar.open('Ihre Nachricht wurde erfolgreich versendet!');
+          this.form.reset();
+        },
+        (error) => {
+          console.error('Fehler beim Versenden der E-Mail:', error);
+          this.snackBar.open('Fehler beim Versenden der Nachricht.');
+        }
+      );
     } else {
-      this.errorMessage.set('');
+      alert(
+        'Bitte füllen Sie alle Felder korrekt aus und akzeptieren Sie die Datenschutzerklärung.'
+      );
     }
-  }
-
-  getErrorMessage() {
-    return this.errorMessage();
   }
 }
