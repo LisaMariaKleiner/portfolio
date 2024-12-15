@@ -1,19 +1,21 @@
 <section class="footer">
   <div class="info_footer">
     <h2>© Lisa Maria Kleiner</h2>
-    <span (click)="openLegalNoticeDialog()">Legal notice</span>
+    <a [routerLink]="['/impressum']">Impressum</a>
+
+    <a [routerLink]="['/legal-notice-dialog']">Datenschutzerklärung</a>
   </div>
   <div class="social_media_container">
     <a
       href="https://de.linkedin.com/in/lisa-maria-kleiner-582107270"
       target="_blank"
-      ><img src="../../assets/img/linkedin.svg" alt=""
+      ><img src="../../assets/img/linkedinweiss.svg" alt=""
     /></a>
     <a href="https://github.com/LisaMariaKleiner" target="_blank"
-      ><img src="../../assets/img/github.svg" alt=""
+      ><img src="../../assets/img/githubweiss.svg" alt=""
     /></a>
     <a href="mailto:mail@lisa-maria-kleiner.de"
-      ><img src="../../assets/img/email.svg" alt=""
+      ><img src="../../assets/img/mailweiss.svg" alt=""
     /></a>
   </div>
 </section>

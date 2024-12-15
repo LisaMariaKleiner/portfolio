@@ -20,4 +20,18 @@
     flex-direction: column;
     color: white;
   }
+
+  .social_media_container {
+    display: flex;
+    gap: 20px;
+
+    a img {
+      width: 50px;
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.2) rotate(360deg);
+      }
+    }
+  }
 }
