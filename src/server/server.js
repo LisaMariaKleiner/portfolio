@@ -5,7 +5,13 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: process.env.URL,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // SMTP-Konfiguration mit Umgebungsvariablen
@@ -22,9 +28,13 @@ const transporter = nodemailer.createTransport({
 app.post("/send-email", (req, res) => {
   const { name, email, phone, message } = req.body;
 
+  if (!name || !email || !message || !validateEmail(email)) {
+    return res.status(400).send({ error: "Ungültige Eingaben" });
+  }
+
   const mailOptions = {
     from: process.env.SMTP_USER,
-    to: "mail@lisa-maria-kleiner.de",
+    to: process.env.SMTP_USER,
     subject: "Neue Kontaktanfrage",
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
   };
@@ -35,9 +45,14 @@ app.post("/send-email", (req, res) => {
         .status(500)
         .send({ error: "Fehler beim Versenden der E-Mail" });
     }
-    res.send({ success: "E-Mail erfolgreich versendet" });
+    res.status(200).send({ message: "E-Mail erfolgreich versendet" });
   });
 });
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+}
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
