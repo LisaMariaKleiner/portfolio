@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Sec7FooterComponent } from '../sec-7-footer/sec-7-footer.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-legal-notice-dialog',
   standalone: true,
-  imports: [],
+  imports: [Sec7FooterComponent, RouterLink],
   templateUrl: './legal-notice-dialog.component.html',
   styleUrl: './legal-notice-dialog.component.scss',
 })
-export class LegalNoticeDialogComponent {
-  constructor(public dialogRef: MatDialogRef<LegalNoticeDialogComponent>) {}
-
-  close(): void {
-    this.dialogRef.close();
-  }
-}
+export class LegalNoticeDialogComponent {}
