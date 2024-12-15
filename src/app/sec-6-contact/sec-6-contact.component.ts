@@ -1,20 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { LegalNoticeDialogComponent } from '../legal-notice-dialog/legal-notice-dialog.component';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ReactiveFormsModule, FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sec-6-contact',
-  standalone: true,
-  imports: [ReactiveFormsModule, MatTooltipModule, CommonModule, RouterLink],
   templateUrl: './sec-6-contact.component.html',
   styleUrls: ['./sec-6-contact.component.scss'],
+  standalone: true,
+  imports: [ReactiveFormsModule, FormsModule, CommonModule],
+  encapsulation: ViewEncapsulation.None,
 })
 export class Sec6ContactComponent implements OnInit {
   form!: FormGroup;
@@ -22,15 +19,8 @@ export class Sec6ContactComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private dialog: MatDialog,
     private snackBar: MatSnackBar
   ) {}
-
-  openLegalNoticeDialog(): void {
-    this.dialog.open(LegalNoticeDialogComponent, {
-      width: '400px',
-    });
-  }
 
   ngOnInit(): void {
     this.buildForm();
@@ -38,41 +28,63 @@ export class Sec6ContactComponent implements OnInit {
 
   private buildForm(): void {
     this.form = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.pattern('[A-Za-z ]+')]],
       email: ['', [Validators.required, Validators.email]],
-      phone: [''],
+      phone: ['', [Validators.pattern('\\d*')]], // Optionales Feld
       message: ['', Validators.required],
       privacyPolicy: [false, Validators.requiredTrue],
     });
   }
 
-  send(): void {
-    if (this.form.valid) {
-      const formData = this.form.value;
+  post = {
+    endPoint: 'http://lisa-maria-kleiner.de/sendMail.php',
+    body: (payload: {
+      name: string;
+      email: string;
+      phone: number;
+      message: string;
+      privacyPolicy: boolean;
+    }) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'application/json', // JSON-Daten im Header
+      },
+      responseType: 'text' as const, // Response-Typ setzen
+    },
+  };
 
-      // Senden der Formulardaten an den Server
-      this.http.post('https://deineDomain.de/send-email', formData).subscribe(
-        () => {
-          this.snackBar.open(
-            'Ihre Nachricht wurde erfolgreich versendet!',
-            '',
-            {
+  onSubmit(): void {
+    if (this.form.valid) {
+      const formData = {
+        name: this.form.value.name,
+        email: this.form.value.email,
+        phone: this.form.value.phone,
+        message: this.form.value.message,
+        privacyPolicy: this.form.value.privacyPolicy,
+      };
+
+      this.http
+        .post(this.post.endPoint, formData, this.post.options)
+        .subscribe({
+          next: () => {
+            console.log('Formular erfolgreich gesendet');
+            this.snackBar.open('Nachricht wurde gesendet!', '', {
               duration: 3000,
-            }
-          );
-          this.form.reset();
-        },
-        (error) => {
-          console.error('Fehler beim Versenden der E-Mail:', error);
-          this.snackBar.open('Fehler beim Versenden der Nachricht.', '', {
-            duration: 3000,
-          });
-        }
-      );
+              panelClass: ['custom-snackbar'],
+            });
+            this.form.reset();
+          },
+          error: (error) => {
+            console.error('Fehler beim Senden:', error);
+            this.snackBar.open('Ein Fehler ist aufgetreten.', '', {
+              duration: 3000,
+            });
+          },
+        });
     } else {
-      alert(
-        'Bitte füllen Sie alle Felder korrekt aus und akzeptieren Sie die Datenschutzerklärung.'
-      );
+      this.snackBar.open('Bitte fülle das Formular korrekt aus.', '', {
+        duration: 3000,
+      });
     }
   }
 }

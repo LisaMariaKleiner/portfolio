@@ -5,110 +5,117 @@
       <h2>Gibt es ein Problem zu lösen?</h2>
       <p>
         Kontaktiere mich über das Kontaktformular auf der rechten Seite. Ich bin
-        gespannt von dir und deinem Unternehmen zu hören!
+        gespannt, von dir und deinem Unternehmen zu hören!
       </p>
-      <span
-        >Du suchst eine FullStack Entwicklerin? Dann zöger nicht länger -
-        schreib mir!</span
-      >
+      <span>
+        Du suchst eine FullStack Entwicklerin? Dann zöger nicht länger - schreib
+        mir!
+      </span>
     </div>
+
     <div class="form_container">
       <div class="contact-form">
-        <form [formGroup]="form" (ngSubmit)="send()">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div>
             <label for="name">Name*:</label>
             <input
-              required
               id="name"
               formControlName="name"
+              required
               pattern="[A-Za-z ]+"
             />
             <div
-              *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
               class="error"
+              *ngIf="form.get('name')?.touched && form.get('name')?.invalid"
             >
-              Bitte gib deinen Namen ein.
+              <span *ngIf="form.get('name')?.errors?.['required']">
+                Bitte gib deinen Namen ein.
+              </span>
+              <span *ngIf="form.get('name')?.errors?.['pattern']">
+                Nur Buchstaben und Leerzeichen sind erlaubt.
+              </span>
             </div>
           </div>
 
           <div>
             <label for="email">E-Mail*:</label>
-            <input
-              required
-              id="email"
-              type="email"
-              formControlName="email"
-              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-            />
+            <input id="email" type="email" formControlName="email" required />
             <div
-              *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
               class="error"
+              *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
             >
-              Upps, deine E-Mail-Adresse vergessen?
+              <span *ngIf="form.get('email')?.errors?.['required']">
+                Bitte gib deine E-Mail-Adresse ein.
+              </span>
+              <span *ngIf="form.get('email')?.errors?.['email']">
+                Bitte gib eine gültige E-Mail-Adresse ein.
+              </span>
             </div>
           </div>
 
           <div>
             <label for="phone">Telefonnummer:</label>
-            <input
-              placeholder="01234567891"
-              id="phone"
-              formControlName="phone"
-            />
+            <input id="phone" formControlName="phone" pattern="\d*" />
           </div>
 
           <div>
             <label for="message">Nachricht*:</label>
             <textarea
-              required
               id="message"
               formControlName="message"
+              required
             ></textarea>
             <div
-              *ngIf="
-                form.get('message')?.invalid && form.get('message')?.touched
-              "
               class="error"
+              *ngIf="
+                form.get('message')?.touched && form.get('message')?.invalid
+              "
             >
-              Bitte gib deine Nachricht ein.
+              <span *ngIf="form.get('message')?.errors?.['required']">
+                Bitte gib deine Nachricht ein.
+              </span>
             </div>
           </div>
+
           <div class="datenschutz">
             <input
               type="checkbox"
               id="privacyPolicy"
               formControlName="privacyPolicy"
+              required
             />
             <label for="privacyPolicy">
               Die
-              <a [routerLink]="['/legal-notice-dialog']"
-                >Datenschutzerklärung</a
-              >
-
+              <a href="/legal-notice-dialog">Datenschutzerklärung</a>
               wurde gelesen und akzeptiert.
             </label>
             <div
-              *ngIf="
-                form.get('privacyPolicy')?.invalid &&
-                form.get('privacyPolicy')?.touched
-              "
               class="error"
+              *ngIf="
+                form.get('privacyPolicy')?.touched &&
+                form.get('privacyPolicy')?.invalid
+              "
             >
-              Du musst die Datenschutzerklärung noch akzeptieren.
+              <span *ngIf="form.get('privacyPolicy')?.errors?.['required']">
+                Du musst die Datenschutzerklärung akzeptieren.
+              </span>
             </div>
           </div>
+
           <p class="pflichtfelder">* Pflichtfelder</p>
           <button type="submit" [disabled]="form.invalid">Absenden</button>
         </form>
       </div>
-      <a href="#start"
-        ><img
+
+      <a href="#start">
+        <img
           matTooltipPosition="above"
           matTooltip="Zurück zum Start"
           class="back_to_start_button"
           src="../../assets/img/goupbutton.svg"
           alt="back to start button"
-      /></a>
+        />
+      </a>
     </div>
   </div>
 </section>

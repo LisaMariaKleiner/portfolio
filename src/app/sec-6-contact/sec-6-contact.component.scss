@@ -136,3 +136,14 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.custom-snackbar {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10000;
+  text-align: center;
+  background-color: #c896fa;
+  border-radius: 10px;
+}
