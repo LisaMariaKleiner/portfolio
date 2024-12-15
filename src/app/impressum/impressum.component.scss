@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.impressum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+app-sec-7-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.back_to_start {
+  background-color: #c896fa;
+  color: white;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #c896fa;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: #c896fa;
+  }
+}
