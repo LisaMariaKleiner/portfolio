@@ -7,11 +7,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sec-6-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, MatTooltipModule, CommonModule],
+  imports: [ReactiveFormsModule, MatTooltipModule, CommonModule, RouterLink],
   templateUrl: './sec-6-contact.component.html',
   styleUrls: ['./sec-6-contact.component.scss'],
 })
@@ -49,15 +50,23 @@ export class Sec6ContactComponent implements OnInit {
     if (this.form.valid) {
       const formData = this.form.value;
 
-      // Senden der Formulardaten an den Node.js-Server
-      this.http.post('http://localhost:3000/send-email', formData).subscribe(
+      // Senden der Formulardaten an den Server
+      this.http.post('https://deineDomain.de/send-email', formData).subscribe(
         () => {
-          this.snackBar.open('Ihre Nachricht wurde erfolgreich versendet!');
+          this.snackBar.open(
+            'Ihre Nachricht wurde erfolgreich versendet!',
+            '',
+            {
+              duration: 3000,
+            }
+          );
           this.form.reset();
         },
         (error) => {
           console.error('Fehler beim Versenden der E-Mail:', error);
-          this.snackBar.open('Fehler beim Versenden der Nachricht.');
+          this.snackBar.open('Fehler beim Versenden der Nachricht.', '', {
+            duration: 3000,
+          });
         }
       );
     } else {
