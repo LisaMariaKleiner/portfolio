@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   .halb_ellipse {
     position: absolute;
     left: 0;
@@ -51,6 +52,7 @@
     flex-direction: column;
     flex: 1;
     gap: 20px;
+    padding: 20px;
     h2 {
       color: #c896fa;
       font-family: "Baloo", sans-serif;
@@ -146,4 +148,170 @@
   text-align: center;
   background-color: #c896fa;
   border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .back_to_start_button {
+    border: 3px solid white;
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  .contact_container {
+    height: auto;
+    .contact_main_container {
+      flex-direction: column;
+      height: auto;
+    }
+    .contact_description {
+      padding: 20px;
+    }
+    .halb_ellipse {
+      top: 4800px;
+      height: 250px;
+    }
+
+    .ellipse_mittel {
+      right: 40px;
+    }
+
+    .datenschutz {
+      flex-direction: column;
+      align-items: flex-start;
+
+      input {
+        width: auto;
+        margin-bottom: 0.5rem;
+      }
+
+      label {
+        font-size: 0.9rem;
+      }
+    }
+    form {
+      max-width: 100%;
+      padding: 0.5rem;
+
+      input,
+      textarea {
+        font-size: 0.9rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .back_to_start_button {
+    border: 3px solid white;
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+  .contact_main_container {
+    flex-direction: column;
+    height: auto;
+  }
+  .contact_container {
+    height: auto;
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .halb_ellipse {
+      top: 4700px;
+      height: 200px;
+    }
+
+    .ellipse_mittel {
+      right: 20px;
+    }
+
+    .datenschutz {
+      flex-direction: column;
+      align-items: flex-start;
+
+      input {
+        width: auto;
+        margin-bottom: 0.5rem;
+      }
+      label {
+        font-size: 0.8rem;
+      }
+    }
+
+    form {
+      max-width: 100%;
+      padding: 0.5rem;
+
+      input,
+      textarea {
+        font-size: 0.8rem;
+      }
+
+      button {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .back_to_start_button {
+    border: 3px solid white;
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+  .contact_main_container {
+    height: auto;
+
+    flex-direction: column;
+    height: auto;
+  }
+  .contact_container {
+    h1 {
+      margin-bottom: 0;
+    }
+    .halb_ellipse {
+      top: 4600px;
+      height: 150px;
+    }
+
+    .ellipse_mittel {
+      right: 10px;
+    }
+
+    .datenschutz {
+      flex-direction: column;
+      align-items: flex-start;
+
+      input {
+        width: auto;
+        margin-bottom: 0.5rem;
+      }
+
+      label {
+        font-size: 0.7rem;
+      }
+    }
+
+    form {
+      max-width: 100%;
+      padding: 0.25rem;
+
+      input,
+      textarea {
+        font-size: 0.7rem;
+      }
+
+      button {
+        font-size: 0.7rem;
+      }
+    }
+  }
 }

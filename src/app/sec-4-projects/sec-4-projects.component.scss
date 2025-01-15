@@ -19,6 +19,7 @@ body {
 
 .anthrazit {
   color: #3b3b3b;
+  font-size: 22px;
 }
 
 .baloo {
@@ -31,22 +32,6 @@ body {
   font-size: 23px;
   font-weight: 400;
   padding-left: 70px;
-}
-
-.ellipse_klein {
-  position: absolute;
-  left: 700px;
-}
-
-.pollo_loco_ellipse_klein {
-  position: absolute;
-  left: 700px;
-  margin-top: 400px;
-}
-
-.ellipse_mittel {
-  position: absolute;
-  left: 1000px;
 }
 
 .join_container {
@@ -70,10 +55,11 @@ body {
     }
 
     .pc {
-      width: 500px;
+      max-width: 500px;
 
       &:hover {
-        transform: scale(1.5);
+        transform: scale(1.4);
+        transform-origin: left center;
         transition: 0.5s;
       }
     }
@@ -174,6 +160,7 @@ body {
 
     &:hover {
       transform: scale(1.4);
+      transform-origin: right center;
       transition: 0.5s;
     }
   }
@@ -187,26 +174,57 @@ body {
   }
 }
 
-.halb_ellipse {
-  position: absolute;
-  left: 0;
-  z-index: -1;
-  height: 600px;
-  top: 2900px;
-}
+@media only screen and (max-width: 1150px) {
+  .projects_title {
+    padding-left: 0;
+    justify-content: center;
+  }
 
-.pollo_loco_halb_ellipse {
-  position: absolute;
-  left: 0;
-  z-index: -1;
-  height: 600px;
-  top: 3700px;
-}
+  .projects_subtitle {
+    padding-left: 0;
+    justify-content: center;
+  }
 
-.dreiviertel_ellipse {
-  position: absolute;
-  top: 3000px;
-  right: 0;
-  z-index: -1;
-  width: 350px;
+  .join_container {
+    flex-direction: column;
+    padding: 0;
+
+    .join_left {
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .pc {
+        width: 60%;
+      }
+    }
+
+    .join_right {
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      span {
+        text-align: left;
+      }
+    }
+  }
+
+  .polloloco_container {
+    flex-direction: column;
+    padding: 0;
+
+    .polloloco_left {
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .polloloco_right {
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

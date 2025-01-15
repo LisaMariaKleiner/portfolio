@@ -1,8 +1,20 @@
 <section id="start" class="main_startpage no-select">
   <div class="navbar">
-    <a href="#about_me_section">About me</a>
-    <a href="#skill_stack">Skill set</a>
-    <a href="#project_section">My work</a>
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu">
+      <a href="#about_me_section">About me</a>
+      <a href="#skill_stack">Skill set</a>
+      <a href="#project_section">My work</a>
+    </div>
+    <div class="dropdown_menu" [class.open]="isMenuOpen">
+      <a href="#about_me_section">About me</a>
+      <a href="#skill_stack">Skill set</a>
+      <a href="#project_section">My work</a>
+    </div>
   </div>
   <div class="content">
     <h2>Hi! Ich bin Lisa</h2>
