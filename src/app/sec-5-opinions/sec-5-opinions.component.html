@@ -1,16 +1,16 @@
 <section id="opinion_section">
   <div class="opinion_content">
-    <h1>Teamplayer gesucht ?</h1>
-    <h3>Das sagen meine Teampartner über mich</h3>
+    <div style="display: flex; flex-direction: column; align-items: center">
+      <h1>Teamplayer gesucht ?</h1>
+      <h3>Das sagen meine Teampartner über mich</h3>
+    </div>
 
     <div class="opinions">
       <div *ngFor="let review of reviews" class="review_container">
         <h3 class="opinion_name">{{ review.name }}</h3>
-        <p class="p1"><strong>Projektname:</strong> {{ review.project }}</p>
-        <p><strong>Bewertung:</strong> {{ review.opinion }} / 5</p>
+
+        <p><strong>Bewertung:</strong> {{ review.opinion }}</p>
       </div>
-      <div></div>
-      <div></div>
     </div>
   </div>
 </section>

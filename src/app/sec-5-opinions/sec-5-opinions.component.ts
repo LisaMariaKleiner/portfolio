@@ -11,22 +11,20 @@ import { CommonModule } from '@angular/common';
 export class Sec5OpinionsComponent {
   reviews = [
     {
-      name: 'Max Mustermann',
-      project: 'Projektname',
+      name: 'Erik Besser',
+
       opinion:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, arcu eu sollicitudin condimentum, justo velit gravida turpis, at consectetur ligula neque a. Vestibulum suscipi.',
+        'Lisa ist eine talentierte Frontend-Entwicklerin mit Schwerpunkt auf Angular und modernen Webtechnologien. Sie überzeugt durch sauberen, performanten Code und ein exzellentes Gespür für nutzerfreundliche Interfaces. Ihre Fähigkeit, Designvorgaben detailgenau umzusetzen und dabei eng mit Teams zusammenzuarbeiten, macht sie zu einer wertvollen Bereicherung für jedes Projekt. Komplexe Herausforderungen löst sie effizient und liefert Ergebnisse, die technisch und visuell überzeugen.',
     },
     {
-      name: 'Anna Smith',
-      project: 'Projektname',
+      name: 'Anna Heinrichs',
       opinion:
-        'Ut vel neque at enim faucibus consectetur. Sed non leo vel massa convallis semssa. Donec vel justo vel ipsum ultricies eleifend. Sed vel massa euismod, tempus arcu id, convallis justo. Nullam condimentum libero.',
+        'Lisa ist eine erfahrene Frontend-Entwicklerin mit Fokus auf Angular, die technisches Know-how mit kreativer Problemlösung kombiniert. Sie punktet mit ihrer strukturierten Arbeitsweise, ihrem Blick für Details und ihrer Fähigkeit, auch unter Zeitdruck hochwertige Ergebnisse zu liefern. Dank ihrer starken Kommunikations- und Teamfähigkeiten fördert sie die Zusammenarbeit und trägt maßgeblich zum Projekterfolg bei. Ihre Leidenschaft für modernes Webdesign spiegelt sich in nutzerfreundlichen, performanten Anwendungen wider.',
     },
     {
-      name: 'Peter Johnson',
-      project: 'Projektname',
+      name: 'Enrico Vonderstein',
       opinion:
-        'Nullam vel enim vel ipsum faucibus consectetur. Donec vel justo vel ipsum ultricies eleifend. Sed vel massa euismod, tempus arcu id, convallis justo. Nullam condimentum libero id bibendum tristique. Sed convallis.',
+        'ist eine vielseitige Softwareentwicklerin mit Schwerpunkt auf Angular, die komplexe Anforderungen in intuitive Lösungen umsetzt. Sie überzeugt durch ihre analytische Denkweise, zuverlässige Arbeitsweise und ein hohes Maß an Eigeninitiative. Besonders schätzt man ihre Fähigkeit, auch bei Herausforderungen den Überblick zu behalten und schnell praktikable Ansätze zu finden. Ihre Projekte zeichnen sich durch technische Präzision und eine klare Benutzerorientierung aus.',
     },
   ];
 }

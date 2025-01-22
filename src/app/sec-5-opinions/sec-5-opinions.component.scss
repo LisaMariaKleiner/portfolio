@@ -4,6 +4,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   h1 {
     font-family: "Baloo", sans-serif;
@@ -26,10 +28,10 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
     background: #c896fa;
     flex-wrap: wrap;
     gap: 20px;
+    height: auto;
   }
 
   .opinions {
@@ -40,7 +42,6 @@
     color: white;
     width: 100%;
     gap: 50px;
-    overflow-y: auto;
     max-height: 60vh;
 
     .p1 {
@@ -68,6 +69,7 @@
 @media (max-width: 768px) {
   #opinion_section {
     padding: 1rem;
+    flex-direction: column;
 
     h1 {
       font-size: 28px;
@@ -79,16 +81,18 @@
       margin-bottom: 60px;
     }
 
-    .opinion_content {
-      flex-direction: column;
-      align-items: center;
-    }
     .opinions {
       flex-direction: column;
       gap: 20px;
       overflow-y: auto;
       max-height: 100vh;
     }
+  }
+  .opinion_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -105,16 +109,33 @@
       margin-bottom: 40px;
     }
 
-    .opinion_content {
-      flex-direction: column;
-      align-items: center;
-    }
     .opinions {
       flex-direction: column;
       gap: 20px;
       overflow-y: auto;
-      max-height: 100vh;
     }
+  }
+  .opinion_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .opinions {
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 100vh;
+    padding-top: 170px;
+  }
+  .opinion_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -135,5 +156,37 @@
       flex-direction: column;
       align-items: center;
     }
+  }
+  .opinions {
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+}
+
+@media (max-width: 1075px) {
+  #opinion_section {
+    padding: 0.25rem;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .opinions_ {
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+      max-height: 100vh;
+    }
+  }
+  .opinion_content {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
   }
 }
