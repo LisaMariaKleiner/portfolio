@@ -55,6 +55,7 @@ export class Sec6ContactComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.valid) {
+      this.form.markAllAsTouched();
       const formData = {
         name: this.form.value.name,
         email: this.form.value.email,

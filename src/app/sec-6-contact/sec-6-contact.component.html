@@ -1,4 +1,4 @@
-<section class="contact_container">
+<section id="contact_section" class="contact_container">
   <h1>Kontakt</h1>
   <div class="contact_main_container">
     <div class="contact_description">
@@ -11,6 +11,15 @@
         Du suchst eine FullStack Entwicklerin? Dann zöger nicht länger - schreib
         mir!
       </span>
+      <a href="#start" class="back_to_start_button">
+        <img
+          matTooltipPosition="above"
+          matTooltip="Zurück zum Start"
+          class="back_to_start_button"
+          src="../../assets/img/goupbutton.svg"
+          alt="back to start button"
+        />
+      </a>
     </div>
 
     <div class="form_container">
@@ -20,6 +29,8 @@
             <label for="name">Name*:</label>
             <input
               id="name"
+              type="text"
+              placeholder="Max Mustermann"
               formControlName="name"
               required
               pattern="[A-Za-z ]+"
@@ -39,7 +50,13 @@
 
           <div>
             <label for="email">E-Mail*:</label>
-            <input id="email" type="email" formControlName="email" required />
+            <input
+              placeholder="max@mustermann.de"
+              id="email"
+              type="email"
+              formControlName="email"
+              required
+            />
             <div
               class="error"
               *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
@@ -55,12 +72,18 @@
 
           <div>
             <label for="phone">Telefonnummer:</label>
-            <input id="phone" formControlName="phone" pattern="\d*" />
+            <input
+              placeholder="0123 12345678"
+              id="phone"
+              formControlName="phone"
+              pattern="\d*"
+            />
           </div>
 
           <div>
             <label for="message">Nachricht*:</label>
             <textarea
+              placeholder="Deine Nachricht an mich..."
               id="message"
               formControlName="message"
               required
@@ -103,19 +126,11 @@
           </div>
 
           <p class="pflichtfelder">* Pflichtfelder</p>
-          <button type="submit" [disabled]="form.invalid">Absenden</button>
+          <button type="submit" [attr.disabled]="form.invalid ? true : null">
+            Absenden
+          </button>
         </form>
       </div>
-
-      <a href="#start">
-        <img
-          matTooltipPosition="above"
-          matTooltip="Zurück zum Start"
-          class="back_to_start_button"
-          src="../../assets/img/goupbutton.svg"
-          alt="back to start button"
-        />
-      </a>
     </div>
   </div>
 </section>
