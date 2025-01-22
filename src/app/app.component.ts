@@ -9,6 +9,7 @@ import { Sec5OpinionsComponent } from './sec-5-opinions/sec-5-opinions.component
 import { Sec6ContactComponent } from './sec-6-contact/sec-6-contact.component';
 import { Sec7FooterComponent } from './sec-7-footer/sec-7-footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -30,4 +31,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class AppComponent {
   title = 'Lisa Maria Kleiner';
+
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('de');
+  }
+
+  switchLanguage(lang: string): void {
+    this.translate.use(lang);
+  }
 }
