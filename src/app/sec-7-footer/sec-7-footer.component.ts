@@ -13,9 +13,8 @@ import { RouterLink } from '@angular/router';
 export class Sec7FooterComponent {
   constructor(private dialog: MatDialog) {}
 
-  openLegalNoticeDialog(): void {
-    this.dialog.open(LegalNoticeDialogComponent, {
-      width: '100vw',
-    });
+  openLegalNotice() {
+    // Öffnet die Route in einem neuen Tab oder Fenster
+    window.open('/legal-notice-dialog', '_blank', 'width=800,height=600');
   }
 }
