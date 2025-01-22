@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface ImageSet {
   img: string;
@@ -19,6 +20,8 @@ interface Images {
   styleUrl: './sec-2-description.component.scss',
 })
 export class Sec2DescriptionComponent {
+  constructor(private router: Router) {}
+
   images: Images = {
     location: {
       img: '../../assets/img/location.svg',
@@ -52,5 +55,9 @@ export class Sec2DescriptionComponent {
         this.images[imageKey].img = '../../assets/img/koffer.svg';
         break;
     }
+  }
+
+  navigateToContact() {
+    this.router.navigate(['/contact']);
   }
 }
