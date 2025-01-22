@@ -2,6 +2,9 @@ body {
   overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+}
 .projects_title {
   margin-top: 130px;
   display: flex;
@@ -99,6 +102,12 @@ body {
       }
     }
   }
+}
+.button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .polloloco_container {
@@ -225,6 +234,42 @@ body {
       padding: 0;
       justify-content: center;
       align-items: center;
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  a {
+    width: 50%;
+  }
+  .projects_title {
+    font-size: 60px;
+  }
+  .projects_subtitle {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .anthrazit {
+    text-align: center;
+  }
+  .polloloco_text,
+  .join_text {
+    width: 80%;
+  }
+  .join_container {
+    .join_right {
+      .github_button {
+        width: 80px;
+        height: 40px;
+      }
+    }
+  }
+  .polloloco_left {
+    .github_button {
+      width: 80px;
+      height: 40px;
     }
   }
 }
