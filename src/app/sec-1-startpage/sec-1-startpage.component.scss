@@ -1,34 +1,45 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .main_startpage {
-  font-family: "Montserrat", sans-serif !important;
   background: linear-gradient(to bottom, white, rgba(200, 150, 250, 0.4));
   display: flex;
   flex-direction: column;
-  height: 130vh;
+  height: 100vh;
   z-index: 10;
 }
 
 .circle_background {
   width: 100%;
-  max-width: 850px;
+  max-width: 650px;
   position: absolute;
-  top: -75px;
+  top: -150px;
   left: -199px;
 }
 
 .profilpic {
   width: 100%;
-  position: absolute;
-  top: -11px;
-  max-width: 777px;
+  position: relative;
+  max-width: 400px;
   height: auto;
   z-index: 10;
   object-fit: cover;
+  transform: translateX(-30%);
+  bottom: 0;
+  left: -220px;
+}
+
+.image-container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  bottom: 0;
 }
 
 .navbar {
@@ -38,6 +49,8 @@ body {
   gap: 30px;
   padding-top: 50px;
   position: relative;
+  z-index: 99;
+  border: 1px solid transparent;
 }
 
 .menu a {
@@ -48,16 +61,18 @@ body {
   width: 120px;
   transition: transform 0.3s;
   width: 50px;
+  z-index: 99;
+  padding: 20px;
+  border: 1px solid transparent;
 
   &:hover {
     color: white;
     background-color: #c896fa;
-    padding: 10px;
+    transform: scale(1.1);
     border-radius: 10px;
   }
 }
 
-/* Hamburger-Menü */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -88,7 +103,6 @@ body {
   transform: rotate(-45deg) translateY(-8px);
 }
 
-/* Dropdown-Menü */
 .dropdown_menu {
   display: none;
   flex-direction: column;
@@ -113,14 +127,13 @@ body {
   display: flex;
 }
 
-/* Inhalt */
 .content {
   display: flex;
   justify-content: center;
   flex-direction: column;
   position: absolute;
   right: 100px;
-  top: 250px;
+  top: 120px;
   height: 300px;
   color: #c896fa;
   z-index: 10;
@@ -129,7 +142,7 @@ body {
 }
 
 .content h2 {
-  font-size: 64px;
+  font-size: 54px;
   font-weight: 400;
   margin: 0;
 }
@@ -137,7 +150,7 @@ body {
 .content p {
   margin: 0;
   font-family: "Baloo", sans-serif !important;
-  font-size: 128px;
+  font-size: 100px;
   font-weight: 300;
   line-height: 1;
 }
@@ -153,7 +166,7 @@ body {
   z-index: 10;
   position: absolute;
   right: 600px;
-  top: 650px;
+  bottom: 0;
 }
 
 .scroll .line {
@@ -169,7 +182,7 @@ body {
   gap: 20px;
   position: absolute;
   right: 250px;
-  top: 770px;
+  top: 450px;
   z-index: 10;
   width: 40px;
 }
@@ -246,6 +259,28 @@ body {
   }
 }
 
+@media (max-width: 1334px) {
+  .line {
+    display: none;
+  }
+
+  .scroll {
+    flex-direction: column;
+    width: 30px;
+    height: auto;
+    z-index: 99;
+    right: 50px;
+
+    .shake {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+  }
+  .social_media_buttons {
+    display: none;
+  }
+}
+
 @media (max-width: 1150px) {
   .navbar a {
     display: block;
@@ -261,7 +296,6 @@ body {
     height: auto;
     z-index: 99;
     right: 50px;
-    top: 595px;
 
     .shake {
       writing-mode: vertical-rl;
@@ -279,9 +313,8 @@ body {
   }
 
   .profilpic {
-    bottom: 0;
-    max-width: 600px;
-    min-width: 600px;
+    max-width: 370px;
+    left: 10%;
   }
 
   .content {
@@ -302,9 +335,8 @@ body {
   }
 
   .circle_background {
-    left: -252px;
-    top: -78px;
-    width: 155%;
+    width: 100%;
+    top: -148px;
   }
 
   .main_startpage {
@@ -326,10 +358,165 @@ body {
 
 @media (max-width: 630px) {
   .circle_background {
-    width: 126%;
+    width: 100%;
   }
   .profilpic {
-    max-width: 500px;
-    min-width: 300px;
+    transform: none;
+    left: 10px;
+    width: 370px;
+  }
+}
+
+@media (max-width: 575px) {
+  .profilpic {
+    max-width: 135%;
+    left: -15%;
+  }
+}
+
+@media (max-width: 521px) {
+  .profilpic {
+    left: -15%;
+    width: 320px;
+  }
+}
+
+@media (max-width: 491px) {
+  .profilpic {
+    left: -15%;
+    width: 320px;
+    bottom: 0;
+  }
+  .circle_background {
+    min-width: 135%;
+  }
+}
+@media (max-width: 480px) {
+  .profilpic {
+    transform: none;
+    left: 0;
+    bottom: 0;
+  }
+  .main_startpage {
+    margin-bottom: 100px;
+  }
+  .circle_background {
+    min-width: 135%;
+  }
+}
+
+@media (max-width: 450px) {
+  .profilpic {
+    left: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .profilpic {
+    left: -15%;
+    width: 320px;
+    bottom: 0;
+  }
+  .circle_background {
+    min-width: 135%;
+  }
+
+  .main_startpage {
+    margin-bottom: 100px;
+  }
+}
+
+@media (max-height: 670px) {
+  .profilpic {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .content p {
+    font-size: 8rem;
+  }
+
+  .content h2 {
+    font-size: 6rem;
+  }
+
+  .circle_background {
+    max-width: 1000px;
+    top: -300px;
+    left: -300px;
+  }
+
+  .profilpic {
+    max-width: 600px;
+    left: -300px;
+    transform: translateX(-15%);
+  }
+
+  .social_media_buttons {
+    right: 400px;
+    top: 600px;
+  }
+
+  .navbar a {
+    font-size: 30px;
+  }
+
+  .scroll {
+    font-size: 28px;
+    right: 800px;
+  }
+
+  .scroll .line {
+    height: 400px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .content {
+    right: 470px;
+    top: 280px;
+  }
+  .content p {
+    font-size: 10rem;
+  }
+
+  .content h2 {
+    font-size: 6rem;
+  }
+
+  .circle_background {
+    max-width: 1500px;
+    top: -400px;
+    left: -400px;
+  }
+
+  .profilpic {
+    max-width: 700px;
+    left: -650px;
+    transform: translateX(-10%);
+  }
+
+  .social_media_buttons {
+    right: 500px;
+    bottom: 200px;
+  }
+
+  .social_media_buttons img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .navbar a {
+    font-size: 35px;
+  }
+
+  .scroll {
+    font-size: 60px;
+    right: 900px;
+  }
+
+  .scroll .line {
+    height: 450px;
   }
 }
