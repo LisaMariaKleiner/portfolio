@@ -65,6 +65,10 @@
   }
 }
 
+.skills_content_container {
+  height: auto;
+}
+
 @media (max-width: 900px) {
   .skill_stack {
     flex: 1 1 calc(25% - 20px);
@@ -107,5 +111,25 @@
   }
   .skill_img_container {
     height: auto;
+  }
+
+  .skills_content_container {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 365px) {
+  .skills_content_container {
+    margin-top: 150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skill_img_container {
+    gap: 0;
+  }
+
+  .project_container {
+    width: 80%;
   }
 }
