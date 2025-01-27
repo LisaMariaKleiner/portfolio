@@ -1,13 +1,13 @@
 <section class="footer">
   <div class="info_footer">
     <h2>© Lisa Maria Kleiner</h2>
-    <a [routerLink]="['/impressum']">Impressum</a>
+    <a [routerLink]="['/impressum']">{{ "LEGALNOTICE" | translate }}</a>
 
     <a
       style="text-decoration: none"
       href="javascript:void(0)"
       (click)="openLegalNotice()"
-      >Legal Notice</a
+      >{{ "PRIVACYPOLICY" | translate }}</a
     >
   </div>
   <div class="social_media_container">
