@@ -1,8 +1,54 @@
 {
+  "LANGUAGE_SWITCH": "Language",
   "GREETING": "Hi! I'm Lisa",
   "FRONTEND": "Frontend",
   "DEVELOPER": "Developer",
-  "ABOUT_ME": "About me",
   "SKILL_SET": "Skill set",
-  "MY_WORK": "My work"
+  "MY_WORK": "My work",
+  "ABOUT_ME": "About me",
+  "START": "Lets work together",
+  "IAM": "I am",
+  "LOCAL": "located in Blankenheim",
+  "REMOTE": "open to work remote",
+  "TEMP": "willing to travel temporarily",
+  "ABOUT_ME_CONTENT": "As a developer, my focus is on creating creative, user-friendly, and high-performance web applications. After completing my training and gaining practical experience in client projects, I am passionate about constantly developing myself and discovering new technologies.\n\nI appreciate the challenge of solving complex problems and finding innovative solutions. Teamwork, initiative, and the drive to push myself further motivate me every day. With my enthusiasm for development, I bring fresh energy and vigor to every project. Let’s turn digital ideas into reality together!",
+  "SEND_MESSAGE": "Send a message",
+  "MYWORK": "My work",
+  "SELECTIONWORK": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+  "JOINTEXT": "A task manager inspired by the Kanban system. Create and organize your tasks using drag-and-drop functionality or assign users and categories.",
+  "POLLOLOCOTEXT": "Jump, run, and throw game based on an object-oriented approach. Help Pepe find coins and Tabasco salsa to fight against the crazy hen.",
+  "TEAMPLAYER": "Need a teamplayer?",
+  "TEAMPLAYERTEXT": "Here what my colleagues said about me",
+
+  "reviews": {
+    "0": {
+      "opinion": "Lisa is a talented Frontend Developer with a focus on Angular and modern web technologies. She stands out for her clean, performant code and excellent sense for user-friendly interfaces. Her ability to implement design guidelines precisely and collaborate closely with teams makes her a valuable asset to any project. She tackles complex challenges efficiently and delivers results that impress both technically and visually."
+    },
+    "1": {
+      "opinion": "Lisa is an experienced Frontend Developer with a focus on Angular, combining technical know-how with creative problem solving. She stands out for her structured approach, attention to detail, and ability to deliver high-quality results even under time pressure. Thanks to her strong communication and teamwork skills, she fosters collaboration and contributes significantly to the success of projects. Her passion for modern web design is reflected in user-friendly, high-performance applications."
+    },
+    "2": {
+      "opinion": "Lisa is a versatile software developer specializing in Angular, who transforms complex requirements into intuitive solutions. She impresses with her analytical thinking, reliable work ethic, and a high level of initiative. Her ability to stay focused and quickly come up with practical solutions even in challenging situations is particularly appreciated. Her projects stand out for their technical precision and clear user orientation."
+    }
+  },
+
+  "CONTACT": "Contact",
+  "SOLVEPROBLEM": "Got a problem to solve?",
+  "CONTACTTEXT": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+  "CONTACTTEXT2": "Need a Frontend developer? Contact me!",
+
+  "ERRORNAME": "Please enter your name.",
+  "ERRORLETTER": "Only letters and spaces are allowed.",
+  "ERRORMAIL": "Please enter a valid email address.",
+  "PHONE": "Phone number",
+  "CONTACTMESSAGE": "Message",
+  "PLACEHOLDERMESSAGE": "Your message here...",
+  "ERRORMESSAGE": "Please enter your message.",
+  "PRIVACYPOLICY": "Privacy policy",
+  "PRIVACYPOLICYTEXT": "has been read and accepted",
+  "ERRORPRIVACYPOLICY": "Please accept the privacy policy.",
+  "REQUIRED": "Required field",
+  "SUBMIT": "Submit",
+  "BACKTOSTART": "Back to start",
+  "LEGALNOTICE": "Legal notice"
 }

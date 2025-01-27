@@ -2,7 +2,56 @@
   "GREETING": "Hi! Ich bin Lisa",
   "FRONTEND": "Frontend",
   "DEVELOPER": "Entwicklerin",
-  "ABOUT_ME": "Über mich",
   "SKILL_SET": "Fähigkeiten",
-  "MY_WORK": "Meine Arbeit"
+  "MY_WORK": "Meine Arbeit",
+  "ABOUT_ME": "Über mich",
+  "START": "Lass uns zusammen durchstarten",
+  "IAM": "Ich bin",
+  "LOCAL": "wohnhaft in Blankenheim",
+  "REMOTE": "offen für Remote-Arbeit",
+  "TEMP": "bereit temporär zu verreisen",
+  "ABOUT_ME_CONTENT": " Als Entwicklerin liegt mein Fokus darauf, kreative, nutzerfreundliche und performante Webanwendungen zu schaffen. Nach meiner Ausbildung und praktischer Erfahrung in Kundenprojekten brenne ich dafür, mich ständig weiterzuentwickeln und neue Technologien zu entdecken. Ich schätze die Herausforderung, komplexe Probleme zu lösen und dabei innovative Lösungen zu finden. Teamarbeit, Eigeninitiative und der Drang, über mich hinauszuwachsen, treiben mich täglich an. Mit meiner Begeisterung für die Entwicklung bringe ich frischen Wind und Tatkraft in jedes Projekt. Lasst uns gemeinsam digitale Ideen in die Tat umsetzen!",
+  "SEND_MESSAGE": "Schicke eine Nachricht",
+  "MYWORK": "Meine Projekte",
+  "SELECTIONWORK": "Entdecken Sie hier eine Auswahl meiner Arbeiten",
+  "JOINTEXT": "Ein vom Kanban-System inspirierter Aufgabenmanager. Erstelle und organisiere deine Aufgaben mithilfe von Drag-and-Drop-Funktionen oder weise Benutzer und Kategorien zu.",
+  "POLLOLOCOTEXT": "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+  "TEAMPLAYER": "Teamplayer gesucht?",
+  "TEAMPLAYERTEXT": "Das sagen meine Teampartner über mich",
+  "reviews": [
+    {
+      "id": 0,
+      "name": "Erik Besser",
+      "opinion": "Lisa ist eine talentierte Frontend-Entwicklerin mit Schwerpunkt auf Angular und modernen Webtechnologien. Sie überzeugt durch sauberen, performanten Code und ein exzellentes Gespür für nutzerfreundliche Interfaces. Ihre Fähigkeit, Designvorgaben detailgenau umzusetzen und dabei eng mit Teams zusammenzuarbeiten, macht sie zu einer wertvollen Bereicherung für jedes Projekt. Komplexe Herausforderungen löst sie effizient und liefert Ergebnisse, die technisch und visuell überzeugen."
+    },
+    {
+      "id": 1,
+      "name": "Anna Heinrichs",
+      "opinion": "Lisa ist eine erfahrene Frontend-Entwicklerin mit Fokus auf Angular, die technisches Know-how mit kreativer Problemlösung kombiniert. Sie punktet mit ihrer strukturierten Arbeitsweise, ihrem Blick für Details und ihrer Fähigkeit, auch unter Zeitdruck hochwertige Ergebnisse zu liefern. Dank ihrer starken Kommunikations- und Teamfähigkeiten fördert sie die Zusammenarbeit und trägt maßgeblich zum Projekterfolg bei. Ihre Leidenschaft für modernes Webdesign spiegelt sich in nutzerfreundlichen, performanten Anwendungen wider."
+    },
+    {
+      "id": 2,
+      "name": "Enrico Vonderstein",
+      "opinion": "ist eine vielseitige Softwareentwicklerin mit Schwerpunkt auf Angular, die komplexe Anforderungen in intuitive Lösungen umsetzt. Sie überzeugt durch ihre analytische Denkweise, zuverlässige Arbeitsweise und ein hohes Maß an Eigeninitiative. Besonders schätzt man ihre Fähigkeit, auch bei Herausforderungen den Überblick zu behalten und schnell praktikable Ansätze zu finden. Ihre Projekte zeichnen sich durch technische Präzision und eine klare Benutzerorientierung aus."
+    }
+  ],
+  "CONTACT": "Kontakt",
+  "SOLVEPROBLEM": "Gibt es ein Problem zu lösen?",
+  "CONTACTTEXT": " Kontaktiere mich über das Kontaktformular auf der rechten Seite. Ich bin gespannt, von dir und deinem Unternehmen zu hören!",
+  "CONTACTTEXT2": " Du suchst eine FullStack Entwicklerin? Dann zöger nicht länger - schreib mir!",
+
+  "ERRORNAME": "Bitte gib deinen Namen ein.",
+  "ERRORLETTER": "Nur Buchstaben und Leerzeichen sind erlaubt.",
+  "ERRORMAIL": "Bitte gib eine gültige E-Mail-Adresse ein.",
+  "PHONE": "Telefonnummer",
+  "CONTACTMESSAGE": "Nachricht",
+  "PLACEHOLDERMESSAGE": "Deine Nachricht an mich...",
+  "ERRORMESSAGE": "Bitte gib deine Nachricht ein.",
+  "PRIVACYPOLICY": "Datenschutzvereinbarung",
+  "PRIVACYPOLICYTEXT": "wurde gelesen und akzeptiert",
+  "ERRORPRIVACYPOLICY": "Bitte akzeptiere die Datenschutzvereinbarung",
+  "REQUIRED": "Pflichtfeld",
+  "BACKTOSTART": "Zurück zum Start",
+  "SUBMIT": "Absenden",
+  "LEGALNOTICE": "Impressum"
 }
