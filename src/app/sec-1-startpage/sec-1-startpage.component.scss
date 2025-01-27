@@ -4,6 +4,34 @@ body {
   font-family: "Montserrat", sans-serif !important;
 }
 
+//Sprache
+.language-switch {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.lang-button:hover {
+  opacity: 0.8;
+}
+
+.lang-button:focus {
+  outline: none;
+}
+
+.flag-icon {
+  width: 20px;
+  height: auto;
+}
+
 .main_startpage {
   background: linear-gradient(to bottom, white, rgba(200, 150, 250, 0.4));
   display: flex;

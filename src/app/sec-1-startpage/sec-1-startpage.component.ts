@@ -1,14 +1,24 @@
-import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sec-1-startpage',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './sec-1-startpage.component.html',
   styleUrl: './sec-1-startpage.component.scss',
 })
 export class Sec1StartpageComponent {
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('de');
+    this.translate.use('de');
+  }
+
+  switchLanguage(lang: string): void {
+    this.translate.use(lang);
+  }
+
   isMenuOpen = false;
   ngOnInit(): void {
     document.addEventListener('DOMContentLoaded', function () {

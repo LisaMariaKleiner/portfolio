@@ -1,25 +1,42 @@
 <section id="start" class="main_startpage no-select">
   <div class="navbar">
+    <div class="language-switch">
+      <button (click)="switchLanguage('de')" class="lang-button">
+        <img
+          src="../../assets/img/deutschland.png"
+          alt="Deutsch"
+          class="flag-icon"
+        />
+      </button>
+      <button (click)="switchLanguage('en')" class="lang-button">
+        <img
+          src="../../assets/img/vereinigtes-konigreich.png"
+          alt="English"
+          class="flag-icon"
+        />
+      </button>
+    </div>
+
     <div class="hamburger" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
     <div class="menu">
-      <a href="#about_me_section">About me</a>
-      <a href="#skill_stack">Skill set</a>
-      <a href="#project_section">My work</a>
+      <a href="#about_me_section">{{ "ABOUT_ME" | translate }}</a>
+      <a href="#skill_stack">{{ "SKILL_SET" | translate }}</a>
+      <a href="#project_section">{{ "MY_WORK" | translate }}</a>
     </div>
     <div class="dropdown_menu" [class.open]="isMenuOpen">
-      <a href="#about_me_section">About me</a>
-      <a href="#skill_stack">Skill set</a>
-      <a href="#project_section">My work</a>
+      <a href="#about_me_section">{{ "ABOUT_ME" | translate }}</a>
+      <a href="#skill_stack">{{ "SKILL_SET" | translate }}</a>
+      <a href="#project_section">{{ "MY_WORK" | translate }}</a>
     </div>
   </div>
   <div class="content">
-    <h2>Hi! Ich bin Lisa</h2>
-    <p class="highlight">Frontend</p>
-    <p class="highlight">Entwicklerin</p>
+    <h2>{{ "GREETING" | translate }}</h2>
+    <p class="highlight">{{ "FRONTEND" | translate }}</p>
+    <p class="highlight">{{ "DEVELOPER" | translate }}</p>
   </div>
   <div class="scroll">
     <p class="shake">SCROLL</p>
