@@ -1,7 +1,9 @@
 <div id="project_section" class="projects_container no-select">
-  <div class="projects_title"><span>My work</span></div>
+  <div class="projects_title">
+    <span>{{ "MYWORK" | translate }}</span>
+  </div>
   <div class="projects_subtitle">
-    <p class="anthrazit">Entdecken Sie hier eine Auswahl meiner Arbeiten</p>
+    <p class="anthrazit">{{ "SELECTIONWORK" | translate }}</p>
   </div>
 
   <div class="join_container">
@@ -13,14 +15,12 @@
       <span class="baloo title">JOIN</span>
       <p class="flieder">JavaScript | HTML | CSS</p>
       <p class="anthrazit, join_text">
-        Ein vom Kanban-System inspirierter Aufgabenmanager. Erstelle und
-        organisiere deine Aufgaben mithilfe von Drag-and-Drop-Funktionen oder
-        weise Benutzer und Kategorien zu.
+        {{ "JOINTEXT" | translate }}
       </p>
       <div class="button_container">
         <a
           target="_blank"
-          href="https://joincloneapp.netlify.app/"
+          href="https://joinapp.lisa-maria-kleiner.de"
           class="github_button flieder"
           >Try it!</a
         >
@@ -40,9 +40,7 @@
       <span class="baloo title">El Pollo Loco</span>
       <p class="flieder">Javascript | HTML | CSS</p>
       <p class="anthrazit, polloloco_text">
-        Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten
-        Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die
-        verrückte Henne zu kämpfen.
+        {{ "POLLOLOCOTEXT" | translate }}
       </p>
       <div class="button_container">
         <a
@@ -53,7 +51,7 @@
         >
         <a
           target="_blank"
-          href="https://pollolocogame.netlify.app/"
+          href="https://elpolloloco.lisa-maria-kleiner.de"
           class="github_button flieder"
         >
           Play!</a
