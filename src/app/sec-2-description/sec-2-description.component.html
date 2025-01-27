@@ -16,8 +16,8 @@
     style="display: flex; justify-content: space-between; align-items: center"
   >
     <div class="left_content_about_me">
-      <p>Lass uns zusammen durchstarten</p>
-      <h5>Ich bin</h5>
+      <p>{{ "START" | translate }}</p>
+      <h5>{{ "IAM" | translate }}</h5>
       <div class="ich_bin_container">
         <div class="short_infos">
           <img
@@ -25,7 +25,7 @@
             (mouseenter)="changeImage('location', images.location.hoverImg)"
             (mouseleave)="resetImage('location')"
           />
-          <span>wohnhaft in Blankenheim</span>
+          <span>{{ "LOCAL" | translate }}</span>
         </div>
         <div class="short_infos">
           <img
@@ -34,7 +34,7 @@
             (mouseenter)="changeImage('remote', images.remote.hoverImg)"
             (mouseleave)="resetImage('remote')"
           />
-          <span>offen für Remote</span>
+          <span>{{ "REMOTE" | translate }}</span>
         </div>
         <div class="short_infos">
           <img
@@ -43,28 +43,19 @@
             (mouseenter)="changeImage('koffer', images.koffer.hoverImg)"
             (mouseleave)="resetImage('koffer')"
           />
-          <span>bereit temporär zu verreisen</span>
+          <span>{{ "TEMP" | translate }}</span>
         </div>
       </div>
     </div>
 
     <div class="right_content_about_me">
       <p>
-        Als Entwicklerin liegt mein Fokus darauf, kreative, nutzerfreundliche
-        und performante Webanwendungen zu schaffen. Nach meiner Ausbildung und
-        praktischer Erfahrung in Kundenprojekten brenne ich dafür, mich ständig
-        weiterzuentwickeln und neue Technologien zu entdecken. <br /><br />
-        Ich schätze die Herausforderung, komplexe Probleme zu lösen und dabei
-        innovative Lösungen zu finden. Teamarbeit, Eigeninitiative und der
-        Drang, über mich hinauszuwachsen, treiben mich täglich an. Mit meiner
-        Begeisterung für die Entwicklung bringe ich frischen Wind und Tatkraft
-        in jedes Projekt. Lasst uns gemeinsam digitale Ideen in die Tat
-        umsetzen!
+        {{ "ABOUT_ME_CONTENT" | translate }}
       </p>
 
-      <a href="#contact_section" class="message_button"
-        >Schicke eine Nachricht</a
-      >
+      <a href="#contact_section" class="message_button">{{
+        "SEND_MESSAGE" | translate
+      }}</a>
     </div>
   </div>
 </div>

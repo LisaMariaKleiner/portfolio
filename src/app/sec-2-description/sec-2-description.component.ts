@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 interface ImageSet {
   img: string;
@@ -15,12 +17,19 @@ interface Images {
 @Component({
   selector: 'app-sec-2-description',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule, CommonModule],
   templateUrl: './sec-2-description.component.html',
   styleUrl: './sec-2-description.component.scss',
 })
 export class Sec2DescriptionComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private translate: TranslateService) {
+    this.translate.setDefaultLang('de');
+    this.translate.use('de');
+  }
+
+  switchLanguage(lang: string): void {
+    this.translate.use(lang);
+  }
 
   images: Images = {
     location: {
