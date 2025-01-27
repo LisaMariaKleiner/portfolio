@@ -4,6 +4,10 @@ body {
   font-family: "Montserrat", sans-serif !important;
 }
 
+.language-switch {
+  z-index: 1000;
+}
+
 .main_startpage {
   background: linear-gradient(to bottom, white, rgba(200, 150, 250, 0.4));
   display: flex;
