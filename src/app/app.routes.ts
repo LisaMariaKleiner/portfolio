@@ -2,12 +2,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { NgModule } from '@angular/core';
-import { LegalNoticeDialogComponent } from './legal-notice-dialog/legal-notice-dialog.component';
+import { privacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
   { path: '', component: MainContentComponent },
   { path: 'impressum', component: ImpressumComponent },
-  { path: 'legal-notice-dialog', component: LegalNoticeDialogComponent },
+  { path: 'privacy-policy', component: privacyPolicyComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 @NgModule({
