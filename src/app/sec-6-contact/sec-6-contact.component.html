@@ -1,20 +1,17 @@
 <section id="contact_section" class="contact_container">
-  <h1>Kontakt</h1>
+  <h1>{{ "CONTACT" | translate }}</h1>
   <div class="contact_main_container">
     <div class="contact_description">
-      <h2>Gibt es ein Problem zu lösen?</h2>
+      <h2>{{ "SOLVEPROBLEM" | translate }}</h2>
       <p>
-        Kontaktiere mich über das Kontaktformular auf der rechten Seite. Ich bin
-        gespannt, von dir und deinem Unternehmen zu hören!
+        {{ "CONTACTTEXT" | translate }}
       </p>
       <span>
-        Du suchst eine FullStack Entwicklerin? Dann zöger nicht länger - schreib
-        mir!
+        {{ "CONTACTTEXT2" | translate }}
       </span>
       <a href="#start" class="back_to_start_button">
         <img
           matTooltipPosition="above"
-          matTooltip="Zurück zum Start"
           class="back_to_start_button"
           src="../../assets/img/goupbutton.svg"
           alt="back to start button"
@@ -40,10 +37,10 @@
               *ngIf="form.get('name')?.touched && form.get('name')?.invalid"
             >
               <span *ngIf="form.get('name')?.errors?.['required']">
-                Bitte gib deinen Namen ein.
+                {{ "ERRORNAME" | translate }}
               </span>
               <span *ngIf="form.get('name')?.errors?.['pattern']">
-                Nur Buchstaben und Leerzeichen sind erlaubt.
+                {{ "ERRORLETTERS" | translate }}
               </span>
             </div>
           </div>
@@ -62,16 +59,16 @@
               *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
             >
               <span *ngIf="form.get('email')?.errors?.['required']">
-                Bitte gib deine E-Mail-Adresse ein.
+                {{ "ERRORMAIL" | translate }}
               </span>
               <span *ngIf="form.get('email')?.errors?.['email']">
-                Bitte gib eine gültige E-Mail-Adresse ein.
+                {{ "ERRORMAIL" | translate }}
               </span>
             </div>
           </div>
 
           <div>
-            <label for="phone">Telefonnummer:</label>
+            <label for="phone">{{ "PHONE" | translate }}:</label>
             <input
               placeholder="0123 12345678"
               id="phone"
@@ -81,13 +78,14 @@
           </div>
 
           <div>
-            <label for="message">Nachricht*:</label>
+            <label for="message">{{ "CONTACTMESSAGE" | translate }}*:</label>
             <textarea
-              placeholder="Deine Nachricht an mich..."
+              placeholder="{{ 'PLACEHOLDERMESSAGE' | translate }}"
               id="message"
               formControlName="message"
               required
             ></textarea>
+
             <div
               class="error"
               *ngIf="
@@ -95,7 +93,7 @@
               "
             >
               <span *ngIf="form.get('message')?.errors?.['required']">
-                Bitte gib deine Nachricht ein.
+                {{ "ERRORMESSAGE" | translate }}
               </span>
             </div>
           </div>
@@ -108,9 +106,10 @@
               required
             />
             <label for="privacyPolicy">
-              Die
-              <a href="/legal-notice-dialog">Datenschutzerklärung</a>
-              wurde gelesen und akzeptiert.
+              <a href="/legal-notice-dialog">{{
+                "PRIVACYPOLICY" | translate
+              }}</a>
+              {{ "PRIVACYPOLICYTEXT" | translate }}.
             </label>
             <div
               class="error"
@@ -120,14 +119,14 @@
               "
             >
               <span *ngIf="form.get('privacyPolicy')?.errors?.['required']">
-                Du musst die Datenschutzerklärung akzeptieren.
+                {{ "ERRORPRIVACYPOLICY" | translate }}.
               </span>
             </div>
           </div>
 
-          <p class="pflichtfelder">* Pflichtfelder</p>
+          <p class="pflichtfelder">* {{ "REQUIRED" | translate }}</p>
           <button type="submit" [attr.disabled]="form.invalid ? true : null">
-            Absenden
+            {{ "SUBMIT" | translate }}
           </button>
         </form>
       </div>

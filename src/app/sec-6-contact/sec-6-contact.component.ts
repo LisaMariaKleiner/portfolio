@@ -4,13 +4,21 @@ import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ReactiveFormsModule, FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-sec-6-contact',
   templateUrl: './sec-6-contact.component.html',
   styleUrls: ['./sec-6-contact.component.scss'],
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    TranslateModule,
+    MatTooltipModule,
+  ],
   encapsulation: ViewEncapsulation.None,
 })
 export class Sec6ContactComponent implements OnInit {
@@ -19,8 +27,16 @@ export class Sec6ContactComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private snackBar: MatSnackBar
-  ) {}
+    private snackBar: MatSnackBar,
+    private translate: TranslateService
+  ) {
+    this.translate.setDefaultLang('de');
+    this.translate.use('de');
+  }
+
+  switchLanguage(lang: string): void {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {
     this.buildForm();
