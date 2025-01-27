@@ -6,6 +6,8 @@ import { Sec3SkillsComponent } from '../sec-3-skills/sec-3-skills.component';
 import { Sec5OpinionsComponent } from '../sec-5-opinions/sec-5-opinions.component';
 import { Sec6ContactComponent } from '../sec-6-contact/sec-6-contact.component';
 import { Sec7FooterComponent } from '../sec-7-footer/sec-7-footer.component';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslationModule } from '../translation.module.';
 
 @Component({
   selector: 'app-main-content',
@@ -18,8 +20,20 @@ import { Sec7FooterComponent } from '../sec-7-footer/sec-7-footer.component';
     Sec5OpinionsComponent,
     Sec6ContactComponent,
     Sec7FooterComponent,
+    TranslationModule,
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
 })
-export class MainContentComponent {}
+export class MainContentComponent {
+  currentLanguage = 'de';
+
+  constructor(private translate: TranslateService) {
+    this.currentLanguage = this.translate.currentLang || 'de';
+  }
+
+  switchLanguage(lang: string): void {
+    this.currentLanguage = lang;
+    this.translate.use(lang);
+  }
+}
