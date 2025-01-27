@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   isMenuOpen = false;
+
   ngOnInit(): void {
     document.addEventListener('DOMContentLoaded', function () {
       const socialMediaButtons = document.querySelector(
