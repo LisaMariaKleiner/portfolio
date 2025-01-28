@@ -454,6 +454,14 @@ body {
   }
 }
 
+@media (max-width: 680px) {
+  .profilpic {
+    left: -15%;
+    width: 220px;
+    bottom: 0;
+  }
+}
+
 @media (max-height: 670px) {
   .profilpic {
     max-width: 300px;

@@ -1,4 +1,11 @@
-import { Component, HostListener } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +16,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sec-1-startpage.component.html',
   styleUrl: './sec-1-startpage.component.scss',
 })
-export class Sec1StartpageComponent {
+export class Sec1StartpageComponent implements OnInit, OnDestroy {
+  @ViewChild('dropdownMenu') dropdownMenu!: ElementRef;
+  @ViewChild('hamburger') hamburger!: ElementRef;
+  private observer: IntersectionObserver | undefined;
+  isMenuOpen = false;
+
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
@@ -19,7 +31,6 @@ export class Sec1StartpageComponent {
     this.translate.use(lang);
   }
 
-  isMenuOpen = false;
   ngOnInit(): void {
     document.addEventListener('DOMContentLoaded', function () {
       const socialMediaButtons = document.querySelector(
@@ -45,6 +56,30 @@ export class Sec1StartpageComponent {
         observer.observe(socialMediaButtons);
       }
     });
+
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && this.isMenuOpen) {
+            this.isMenuOpen = false;
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    // Beobachte das Hamburger-Menü nach dem View Init
+    setTimeout(() => {
+      if (this.hamburger) {
+        this.observer?.observe(this.hamburger.nativeElement);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -56,6 +91,18 @@ export class Sec1StartpageComponent {
   }
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
-    console.log('Menu open:', this.isMenuOpen);
+  }
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (!this.dropdownMenu || !this.hamburger) return;
+
+    const targetElement = event.target as HTMLElement;
+    const clickedInside =
+      this.dropdownMenu.nativeElement.contains(targetElement) ||
+      this.hamburger.nativeElement.contains(targetElement);
+
+    if (!clickedInside && this.isMenuOpen) {
+      this.isMenuOpen = false;
+    }
   }
 }
