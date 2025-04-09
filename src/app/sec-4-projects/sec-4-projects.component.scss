@@ -2,11 +2,19 @@ body {
   overflow: hidden;
 }
 
+p {
+  text-align: center;
+}
+
 a {
   text-decoration: none;
 }
+
+.ellipse_work {
+  margin-left: 40%;
+}
+
 .projects_title {
-  margin-top: 130px;
   display: flex;
   justify-content: flex-start;
   font-family: "Baloo", sans-serif;
@@ -16,6 +24,10 @@ a {
   padding-left: 70px;
 }
 
+.ellipse_mittel_projects {
+  position: absolute;
+  margin-left: 70%;
+}
 .flieder {
   color: #c896fa;
 }
@@ -129,7 +141,7 @@ a {
   flex: 1;
 
   p {
-    width: 50%;
+    width: 70%;
   }
 
   .title {
@@ -238,12 +250,59 @@ a {
   }
 }
 
+@media (max-width: 992px) {
+  .projects_title {
+    font-size: 50px;
+  }
+
+  .join_text {
+    width: 70% !important;
+  }
+  .projects_subtitle .anthrazit {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .handy {
+    width: 50px !important;
+    &:hover {
+      transform: scale(1.8);
+      transition: 0.5s;
+    }
+  }
+}
+
 @media (max-width: 376px) {
   a {
     width: 50%;
   }
+
+  .handyPolloLoco {
+    width: 200px !important;
+    border-bottom-right-radius: 20px;
+
+    &:hover {
+      transform: none !important;
+    }
+  }
+
+  .handy {
+    width: 40px !important;
+    &:hover {
+      transform: none !important;
+    }
+  }
+
+  .pc {
+    transform: none !important;
+  }
+
+  .join_text {
+    width: 70% !important;
+  }
   .projects_title {
-    font-size: 60px;
+    font-size: 50px;
   }
   .projects_subtitle {
     font-size: 20px;
@@ -258,17 +317,22 @@ a {
   .join_text {
     width: 80%;
   }
+
+  .join_text {
+    width: 70% !important;
+  }
+
   .join_container {
     .join_right {
       .github_button {
-        width: 80px;
+        width: 100px;
         height: 40px;
       }
     }
   }
   .polloloco_left {
     .github_button {
-      width: 80px;
+      width: 100px;
       height: 40px;
     }
   }
