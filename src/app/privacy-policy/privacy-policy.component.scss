@@ -11,7 +11,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 6rem;
+  text-align: justify;
+  padding: 0px 50px;
+  max-width: 1200px;
+
+  p {
+    text-align: justify;
+    width: 100%;
+  }
 }
 
 .back_to_start {
