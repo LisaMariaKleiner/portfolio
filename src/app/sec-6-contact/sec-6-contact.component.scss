@@ -2,6 +2,20 @@ body {
   height: 100vh;
 }
 
+.contact-form div input,
+.contact-form div textarea,
+.datenschutz input {
+  border: 1px solid #c896fa !important;
+  border-radius: 10px !important;
+}
+
+.back_to_start_button2 {
+  display: none;
+}
+p {
+  text-align: justify;
+}
+
 button:disabled {
   cursor: not-allowed;
   opacity: 0.2;
@@ -60,7 +74,7 @@ button:disabled {
     flex-direction: column;
     flex: 1;
     gap: 20px;
-    padding: 20px;
+    padding: 80px;
     h2 {
       color: #c896fa;
       font-family: "Baloo", sans-serif;
@@ -191,20 +205,41 @@ button:disabled {
 }
 
 @media (max-width: 768px) {
+  .back_to_start_button2_container {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  .contact_main_container {
+    width: 80%;
+  }
   .back_to_start_button {
-    margin-top: 10px;
+    display: none;
   }
-  h1 {
-    margin-bottom: 0;
+  .back_to_start_button2 {
+    display: flex !important;
   }
+
   .contact_container {
-    height: auto;
+    h1 {
+      margin-bottom: 0;
+      font-size: 60px;
+    }
+
     .contact_main_container {
       flex-direction: column;
       height: auto;
     }
     .contact_description {
       padding: 20px;
+      h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 19px !important;
+      }
     }
     .halb_ellipse {
       top: 4800px;
@@ -245,12 +280,19 @@ button:disabled {
 }
 
 @media (max-width: 480px) {
+  .back_to_start_button2_container {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
   .back_to_start_button {
     margin-top: 10px;
   }
   .contact_main_container {
     flex-direction: column;
     height: auto;
+    width: 80%;
   }
   .contact_container {
     height: auto;
@@ -281,6 +323,18 @@ button:disabled {
       }
     }
 
+    .contact-form button {
+      width: 50%;
+    }
+
+    .back_to_start_button2 {
+      padding-bottom: 10px;
+    }
+
+    .contact_description h2 {
+      font-size: 19px;
+    }
+
     form {
       max-width: 100%;
       padding: 0.5rem;
@@ -303,13 +357,14 @@ button:disabled {
   }
   .contact_main_container {
     height: auto;
-
+    width: 80%;
     flex-direction: column;
     height: auto;
   }
   .contact_container {
     h1 {
       margin-bottom: 0;
+      font-size: 69px;
     }
     .halb_ellipse {
       top: 4600px;
