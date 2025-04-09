@@ -6,6 +6,11 @@
   scroll-behavior: smooth;
 }
 
+.app-container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 router-outlet {
   flex: 1;
 }
