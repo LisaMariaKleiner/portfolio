@@ -4,19 +4,44 @@ body {
   font-family: "Montserrat", sans-serif !important;
 }
 
+.container {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 //Sprache
-.language-switch {
+
+.language-switch,
+.language-switch-dropdown {
   display: flex;
   gap: 10px;
+  min-width: 100px;
+  justify-content: flex-end;
 }
 
 .lang-button {
   background-color: transparent;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  padding: 0;
   border-radius: 50%;
   border: none;
   cursor: pointer;
+
+  .flag-icon {
+    width: 20px;
+    height: auto;
+    min-width: 20px;
+    min-height: 20px;
+    object-fit: contain;
+  }
 }
 
 .lang-button:hover {
@@ -27,25 +52,31 @@ body {
   outline: none;
 }
 
-.flag-icon {
-  width: 20px;
-  height: auto;
-}
-
 .main_startpage {
   background: linear-gradient(to bottom, white, rgba(200, 150, 250, 0.4));
   display: flex;
   flex-direction: column;
   height: 100vh;
   z-index: 10;
+  overflow: hidden;
+  position: relative;
 }
 
+// .circle_background {
+//   width: 100%;
+//   max-width: 900px;
+//   position: absolute;
+//   top: -100px;
+//   left: -250px;
+// }
 .circle_background {
-  width: 100%;
-  max-width: 650px;
   position: absolute;
   top: -150px;
-  left: -199px;
+  left: -150px;
+  width: 800px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .profilpic {
@@ -79,14 +110,29 @@ body {
   position: relative;
   z-index: 99;
   border: 1px solid transparent;
+  min-height: 80px;
+  width: 100%;
+
+  a {
+    min-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+  }
 }
 
-.menu a {
+.menu {
+  display: flex;
+  gap: 20px;
+  min-width: 300px;
+  justify-content: flex-end;
+}
+a {
   text-decoration: none;
   color: #c896fa;
   font-size: 23px;
   margin-right: 90px;
   width: 120px;
+  min-width: 120px;
   transition: transform 0.3s;
   width: 50px;
   z-index: 99;
@@ -314,6 +360,10 @@ body {
     display: block;
   }
 
+  .language-switch {
+    display: none;
+  }
+
   .line {
     display: none;
   }
@@ -341,8 +391,9 @@ body {
   }
 
   .profilpic {
-    max-width: 370px;
+    transform: none;
     left: 10%;
+    width: 370px;
   }
 
   .content {
@@ -350,6 +401,13 @@ body {
     left: 20px;
     color: white;
     font-size: 20px !important;
+
+    h2 {
+      font-size: 3.5rem !important;
+    }
+    p {
+      font-size: 4rem !important;
+    }
   }
 
   .content p {
@@ -358,7 +416,7 @@ body {
   }
 
   .content h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
   }
 
@@ -393,6 +451,15 @@ body {
     left: 10px;
     width: 370px;
   }
+
+  .content {
+    h2 {
+      font-size: 2.5rem !important;
+    }
+    p {
+      font-size: 3rem !important;
+    }
+  }
 }
 
 @media (max-width: 575px) {
@@ -406,6 +473,19 @@ body {
   .profilpic {
     left: -15%;
     width: 320px;
+  }
+  .content {
+    top: -20px;
+    left: 20px;
+    color: white;
+    font-size: 20px !important;
+
+    h2 {
+      font-size: 2.5rem !important;
+    }
+    p {
+      font-size: 3rem !important;
+    }
   }
 }
 
@@ -442,22 +522,28 @@ body {
 @media (max-width: 420px) {
   .profilpic {
     left: -15%;
-    width: 320px;
+    width: 258px;
     bottom: 0;
   }
   .circle_background {
-    min-width: 135%;
+    min-width: 145%;
+    top: -56px;
   }
 
   .main_startpage {
     margin-bottom: 100px;
   }
+  .content {
+    h2 {
+      font-size: 1.8rem !important;
+    }
+  }
 }
 
 @media (max-width: 680px) {
   .profilpic {
-    left: -15%;
-    width: 220px;
+    left: -11%;
+    width: 258px;
     bottom: 0;
   }
 }
@@ -510,7 +596,7 @@ body {
 
 @media (min-width: 2200px) {
   .content {
-    right: 470px;
+    right: 100px;
     top: 280px;
   }
   .content p {
@@ -528,8 +614,8 @@ body {
   }
 
   .profilpic {
-    max-width: 700px;
-    left: -650px;
+    max-width: 600px;
+    left: -500px;
     transform: translateX(-10%);
   }
 
