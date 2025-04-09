@@ -7,7 +7,7 @@ import { privacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 export const routes: Routes = [
   { path: '', component: MainContentComponent },
   { path: 'impressum', component: ImpressumComponent },
-  { path: 'privacy-policy', component: privacyPolicyComponent },
+  { path: 'privacyPolicy', component: privacyPolicyComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 @NgModule({
