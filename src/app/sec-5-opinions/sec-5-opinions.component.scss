@@ -7,6 +7,10 @@
   margin-top: 20px;
   margin-bottom: 20px;
 
+  p {
+    text-align: justify;
+  }
+
   h1 {
     font-family: "Baloo", sans-serif;
     color: white;
@@ -16,7 +20,7 @@
 
   h3 {
     color: white;
-    font-size: 32;
+    font-size: 32px;
     margin-bottom: 80px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -29,7 +33,6 @@
     flex-direction: column;
     width: 100%;
     background: #c896fa;
-    flex-wrap: wrap;
     gap: 20px;
     height: auto;
   }
@@ -38,23 +41,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    overflow-x: auto;
     color: white;
     width: 100%;
     gap: 50px;
     max-height: 60vh;
+    padding: 30px 10px; /* Fügt linken & rechten Abstand hinzu */
+    scroll-snap-type: x mandatory;
 
-    .p1 {
-      margin: 0;
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+
+    /* Platzhalter für linken & rechten Rand, damit nichts abgeschnitten wird */
+    &::before,
+    &::after {
+      content: "";
+      flex: 0 0 20px;
     }
   }
 
   .opinion_name {
     font-size: 24px;
-    padding: 0;
-    margin-bottom: 0;
-    font-family: "Baloo", sans-serif;
     margin: 0;
+    font-family: "Baloo", sans-serif;
   }
 }
 
@@ -64,42 +83,84 @@
   align-items: flex-start;
   flex-direction: column;
   width: 300px;
+  min-width: 280px; /* Leicht erhöht, damit es nicht zu eng wird */
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  word-wrap: break-word;
+  white-space: normal;
+  padding: 10px;
+}
+
+@media (max-width: 1075px) {
+  #opinion_section {
+    .opinion_content {
+      h1 {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .opinions {
+        padding-left: 16px;
+      }
+
+      .opinion_card {
+        min-width: 300px;
+        flex: 0 0 auto;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
   #opinion_section {
-    padding: 1rem;
-    flex-direction: column;
-
-    h1 {
-      font-size: 28px;
-      padding-top: 20px;
-    }
-
-    h3 {
-      font-size: 20px;
-      margin-bottom: 60px;
-    }
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
 
     .opinions {
-      flex-direction: column;
-      gap: 20px;
-      overflow-y: auto;
-      max-height: 100vh;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      overflow-x: scroll;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      margin: 0;
+      width: 100%;
+      padding-left: 20px;
+      scroll-padding-left: 20px; /* Sicherstellen, dass der erste Eintrag sichtbar ist */
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Platz für das erste Element schaffen */
+      &::before {
+        content: "";
+        display: block;
+        flex: 0 0 20px;
+      }
+
+      .opinion_card:first-child {
+        margin-left: 20px; /* Falls nötig, um zusätzlichen Platz zu geben */
+      }
+
+      .opinion_card {
+        min-width: 80vw;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        padding: 15px;
+      }
     }
-  }
-  .opinion_content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
   }
 }
 
 @media (max-width: 480px) {
   #opinion_section {
-    padding: 0.5rem;
-
     h1 {
       font-size: 24px;
     }
@@ -108,41 +169,11 @@
       font-size: 20px;
       margin-bottom: 40px;
     }
-
-    .opinions {
-      flex-direction: column;
-      gap: 20px;
-      overflow-y: auto;
-    }
-  }
-  .opinion_content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 375px) {
-  .opinions {
-    flex-direction: column;
-    gap: 20px;
-    overflow-y: auto;
-    max-height: 100vh;
-    padding-top: 170px;
-  }
-  .opinion_content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
   }
 }
 
 @media (max-width: 320px) {
   #opinion_section {
-    padding: 0.25rem;
-
     h1 {
       font-size: 24px;
     }
@@ -151,42 +182,5 @@
       font-size: 20px;
       margin-bottom: 30px;
     }
-
-    .opinion_content {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  .opinions {
-    flex-direction: column;
-    gap: 20px;
-    overflow-y: auto;
-    max-height: 100vh;
-  }
-}
-
-@media (max-width: 1075px) {
-  #opinion_section {
-    padding: 0.25rem;
-
-    h1 {
-      font-size: 20px;
-    }
-
-    h3 {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-    .opinions_ {
-      flex-direction: column;
-      gap: 20px;
-      overflow-y: auto;
-      max-height: 100vh;
-    }
-  }
-  .opinion_content {
-    flex-direction: column;
-    align-items: center;
-    padding: 50px;
   }
 }
