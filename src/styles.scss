@@ -17,14 +17,10 @@ body {
   margin: 0;
   scroll-behavior: smooth;
 }
-app-root {
-  width: 100%;
-  max-width: 1920px;
-}
 
 .no-select {
-  user-select: none; /* Verhindert das Markieren des Textes */
-  -webkit-user-select: none; /* Für Safari */
-  -moz-user-select: none; /* Für ältere Versionen von Firefox */
-  -ms-user-select: none; /* Für Internet Explorer/Edge */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
