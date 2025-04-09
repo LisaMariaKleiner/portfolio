@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent {
   isMenuOpen = false;
+
+  constructor(private languageService: LanguageService) {}
+
+  switchLanguage(lang: string): void {
+    this.languageService.switchLanguage(lang);
+  }
 
   ngOnInit(): void {
     document.addEventListener('DOMContentLoaded', function () {

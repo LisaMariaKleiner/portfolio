@@ -130,6 +130,42 @@ body {
   }
 }
 
+//Sprache
+
+.language-switch,
+.language-switch-dropdown {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.lang-button:hover {
+  opacity: 0.8;
+}
+
+.lang-button:focus {
+  outline: none;
+}
+
+.flag-icon {
+  width: 20px;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .main_startpage {
+    margin-bottom: 8px;
+  }
+}
+
 @media (max-width: 630px) {
   .circle_background {
     width: 100%;
@@ -145,7 +181,6 @@ body {
 }
 @media (max-width: 480px) {
   .main_startpage {
-    margin-bottom: 100px;
   }
   .circle_background {
     min-width: 135%;
@@ -155,10 +190,6 @@ body {
 @media (max-width: 420px) {
   .circle_background {
     min-width: 135%;
-  }
-
-  .main_startpage {
-    margin-bottom: 100px;
   }
 }
 
