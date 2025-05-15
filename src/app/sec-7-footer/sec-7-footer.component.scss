@@ -1,8 +1,14 @@
+.outer_container {
+  width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
 .footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 30vh;
+  height: 400px;
   background-color: #c896fa;
 
   span {
