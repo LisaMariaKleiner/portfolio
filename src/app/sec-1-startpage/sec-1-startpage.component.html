@@ -33,10 +33,21 @@
         <a href="#skill_stack">{{ "SKILL_SET" | translate }}</a>
         <a href="#project_section">{{ "MY_WORK" | translate }}</a>
       </div>
-      <div class="dropdown_menu" #dropdownMenu [class.open]="isMenuOpen">
-        <a href="#about_me_section">{{ "ABOUT_ME" | translate }}</a>
-        <a href="#skill_stack">{{ "SKILL_SET" | translate }}</a>
-        <a href="#project_section">{{ "MY_WORK" | translate }}</a>
+      <div
+        class="dropdown_menu"
+        #dropdownMenu
+        [class.open]="isMenuOpen"
+        (click)="closeMenu()"
+      >
+        <a (click)="closeMenu()" href="#about_me_section">{{
+          "ABOUT_ME" | translate
+        }}</a>
+        <a (click)="closeMenu()" href="#skill_stack">{{
+          "SKILL_SET" | translate
+        }}</a>
+        <a (click)="closeMenu()" href="#project_section">{{
+          "MY_WORK" | translate
+        }}</a>
         <div class="language-switch-dropdown">
           <button (click)="switchLanguage('de')" class="lang-button">
             <img
@@ -78,7 +89,7 @@
       /></a>
     </div>
     <div class="image-container">
-      <img src="../../assets/img/profilpic2.png" alt="" class="profilpic" />
+      <img src="../../assets/img/IMG_8523.PNG" alt="" class="profilpic" />
     </div>
   </div>
 </section>

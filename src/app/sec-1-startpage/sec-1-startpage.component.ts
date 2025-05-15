@@ -89,6 +89,11 @@ export class Sec1StartpageComponent implements OnInit, OnDestroy {
       this.isMenuOpen = false;
     }
   }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
