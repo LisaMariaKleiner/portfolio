@@ -1,4 +1,18 @@
+body {
+  scroll-behavior: smooth;
+}
+
+.section_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 #opinion_section {
+  width: 100%;
+  box-sizing: border-box;
   height: auto;
   display: flex;
   justify-content: center;
@@ -40,14 +54,22 @@
   .opinions {
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: row;
     overflow-x: auto;
-    color: white;
-    width: 100%;
-    gap: 50px;
-    max-height: 60vh;
-    padding: 30px 10px; /* Fügt linken & rechten Abstand hinzu */
+    gap: 16px;
+    padding: 16px;
     scroll-snap-type: x mandatory;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+
+    // Scrollbar auf Mobilgeräten ausblenden
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     &::-webkit-scrollbar {
       height: 8px;
@@ -78,17 +100,11 @@
 }
 
 .review_container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 300px;
-  min-width: 280px; /* Leicht erhöht, damit es nicht zu eng wird */
+  min-width: 250px;
+  max-width: 300px;
+  width: 80%;
   flex: 0 0 auto;
-  scroll-snap-align: start;
-  word-wrap: break-word;
-  white-space: normal;
-  padding: 10px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1075px) {
@@ -107,7 +123,7 @@
         padding-left: 16px;
       }
 
-      .opinion_card {
+      .review_container {
         min-width: 300px;
         flex: 0 0 auto;
       }
@@ -116,40 +132,46 @@
 }
 
 @media (max-width: 768px) {
+  .section_wrapper {
+    padding: 0;
+  }
+
   #opinion_section {
-    width: 100%;
-    overflow: hidden;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
     padding: 0;
 
     .opinions {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      overflow-x: scroll;
-      padding: 20px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
+      padding: 10px;
       margin: 0;
       width: 100%;
-      padding-left: 20px;
-      scroll-padding-left: 20px; /* Sicherstellen, dass der erste Eintrag sichtbar ist */
+
+      .review_container {
+        min-width: 85%;
+        max-width: 85%;
+        margin: 0;
+        background-color: floralwhite;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
 
       &::-webkit-scrollbar {
         display: none;
       }
 
-      /* Platz für das erste Element schaffen */
       &::before {
         content: "";
         display: block;
         flex: 0 0 20px;
       }
 
-      .opinion_card:first-child {
-        margin-left: 20px; /* Falls nötig, um zusätzlichen Platz zu geben */
+      .review_container:first-child {
+        margin-left: 20px;
       }
 
-      .opinion_card {
+      .review_container {
         min-width: 80vw;
         flex: 0 0 auto;
         scroll-snap-align: start;
