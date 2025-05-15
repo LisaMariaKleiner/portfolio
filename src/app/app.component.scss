@@ -1,5 +1,7 @@
 :host {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
@@ -8,7 +10,7 @@
 
 .app-container {
   max-width: 1920px;
-  margin: 0 auto;
+  // margin: 0 auto;
 }
 
 router-outlet {
