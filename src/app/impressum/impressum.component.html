@@ -1,10 +1,6 @@
 <app-header></app-header>
 <div class="impressum">
-  <a class="back_to_start" [routerLink]="['/']"
-    ><h3>Zurück zur Startseite</h3></a
-  >
-
-  <h1>Impressum</h1>
+  <h1>{{ "LEGALNOTICE" | translate }}</h1>
 
   <p>
     Lisa Maria Kleiner<br />
@@ -12,9 +8,13 @@
     53945 Blankenheim
   </p>
 
-  <h2>Kontakt</h2>
+  <h2>{{ "CONTACT" | translate }}</h2>
 
   <p>E-Mail: mail&#64;lisa-maria-kleiner.de</p>
+
+  <a class="back_to_start" [routerLink]="['/']">
+    <h3>{{ "BACKTOSTART" | translate }}</h3>
+  </a>
 </div>
 
 <app-sec-7-footer></app-sec-7-footer>
