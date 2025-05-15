@@ -81,20 +81,10 @@ a {
 
     .handy {
       width: 100px;
-      &:hover {
-        transform: scale(2.7);
-        transition: 0.5s;
-      }
     }
 
     .pc {
       max-width: 500px;
-
-      &:hover {
-        transform: scale(1.4);
-        transform-origin: left center;
-        transition: 0.5s;
-      }
     }
   }
 
@@ -147,7 +137,6 @@ a {
   margin-top: 100px;
   align-items: start;
   flex: 1;
-  // padding: 80px;
 }
 
 .polloloco_left {
@@ -197,12 +186,6 @@ a {
   .handyPolloLoco {
     width: 250px;
     border-bottom-right-radius: 20px;
-
-    &:hover {
-      transform: scale(1.4);
-      transform-origin: right center;
-      transition: 0.5s;
-    }
   }
 
   video {
@@ -214,28 +197,73 @@ a {
   }
 }
 
+.horsemanager_container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 100px auto 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .horsemanager_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-top: 30px;
+
+    .pc {
+      max-width: 720px;
+    }
+  }
+
+  .horsemanager_right {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex: 1;
+    flex-direction: column;
+    padding: 80px;
+
+    p {
+      width: 50%;
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 45px;
+      font-family: "Baloo", sans-serif;
+      color: #c896fa;
+    }
+  }
+}
+
 @media only screen and (max-width: 1150px) {
   .projects_title,
   .projects_subtitle {
     padding: 20px;
     margin: 0;
-    // width: 100%;
     text-align: center !important;
     justify-content: center !important;
   }
 
   .join_container,
+  .horsemanager_container,
   .polloloco_container {
     flex-direction: column;
     padding: 10px;
-    // width: 100%;
     margin: 0 auto;
     overflow: hidden;
 
     .join_left,
     .polloloco_left,
     .join_right,
-    .polloloco_right {
+    .polloloco_right,
+    .horsemanager_left,
+    .horsemanager_right {
       width: 100%;
       max-width: 100vw;
       padding: 10px;
@@ -297,7 +325,8 @@ a {
   }
 
   .join_container,
-  .polloloco_container {
+  .polloloco_container,
+  .horsemanager_container {
     padding: 10px;
 
     .github_button {
@@ -309,7 +338,9 @@ a {
     .join_left,
     .polloloco_left,
     .join_right,
-    .polloloco_right {
+    .polloloco_right,
+    .horsemanager_left,
+    .horsemanager_right {
       padding: 10px;
       max-width: 100vw;
       box-sizing: border-box;
@@ -318,27 +349,23 @@ a {
 
   .handy {
     width: 50px !important;
-    &:hover {
-      transform: scale(1.4);
-    }
   }
 
   .handyPolloLoco {
     width: 200px;
-    &:hover {
-      transform: scale(1.2);
-    }
   }
 }
 
 @media (max-width: 376px) {
   .join_container,
-  .polloloco_container {
+  .polloloco_container,
+  .horsemanager_container {
     padding: 5px;
 
     .join_left,
     .polloloco_left,
-    .join_right,
+    .horsemanager_left,
+    .horsemanager_right .join_right,
     .polloloco_right {
       p {
         max-width: 100vw;
