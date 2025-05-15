@@ -1,5 +1,12 @@
 body {
   height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.outer_container {
+  width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .contact-form div input,
@@ -23,11 +30,14 @@ button:disabled {
 
 .contact_container {
   width: 100%;
+  box-sizing: border-box;
+  height: auto;
   display: flex;
-  background: linear-gradient(to bottom, white, rgba(200, 150, 250, 0.4));
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  background: linear-gradient(to bottom, white, rgba(200, 150, 250, 0.4));
 
   .halb_ellipse {
     position: absolute;
