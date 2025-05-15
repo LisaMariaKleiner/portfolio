@@ -146,6 +146,10 @@ body {
       padding: 10px;
       margin: 0;
       width: 100%;
+      scroll-padding: 0 10px;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      justify-content: flex-start;
 
       .review_container {
         min-width: 85%;
@@ -155,20 +159,11 @@ body {
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 10px;
+        scroll-snap-align: center;
       }
 
       &::-webkit-scrollbar {
         display: none;
-      }
-
-      &::before {
-        content: "";
-        display: block;
-        flex: 0 0 20px;
-      }
-
-      .review_container:first-child {
-        margin-left: 20px;
       }
 
       .review_container {
