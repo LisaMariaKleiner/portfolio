@@ -1,19 +1,25 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   isMenuOpen = false;
 
-  constructor(private languageService: LanguageService) {}
+  constructor(
+    private languageService: LanguageService,
+    private translate: TranslateService
+  ) {
+    this.translate.addLangs(['en', 'de']);
+    this.translate.setDefaultLang('de');
+  }
 
   switchLanguage(lang: string): void {
     this.languageService.switchLanguage(lang);
@@ -56,5 +62,9 @@ export class HeaderComponent {
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
     console.log('Menu open:', this.isMenuOpen);
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 }
