@@ -1,25 +1,26 @@
-<div id="about_me_section" class="about_me_section no-select">
-  <img
-    class="ellipse_mittel"
-    src="../../assets/img/Ellipse-mittel.svg"
-    alt="bubble"
-  />
+<section class="main_description no-select">
+  <div id="about_me_section" class="about_me_section no-select">
+    <img
+      class="ellipse_mittel"
+      src="../../assets/img/Ellipse-mittel.svg"
+      alt="bubble"
+    />
 
-  <img
-    class="ellipse_klein"
-    src="../../assets/img/Ellipse-klein.svg"
-    alt="bubble"
-  />
+    <img
+      class="ellipse_klein"
+      src="../../assets/img/Ellipse-klein.svg"
+      alt="bubble"
+    />
 
-  <div
-    class="content_about_me"
-    style="display: flex; justify-content: space-between; align-items: center"
-  >
-    <div class="left_content_about_me">
-      <p>{{ "START" | translate }}</p>
-      <!-- <h5>{{ "IAM" | translate }}</h5>
+    <div
+      class="content_about_me"
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <div class="left_content_about_me">
+        <p>{{ "START" | translate }}</p>
+        <!-- <h5>{{ "IAM" | translate }}</h5>
       <div class="ich_bin_container"> -->
-      <!-- <div class="short_infos">
+        <!-- <div class="short_infos">
           <img
             [src]="images.location.img"
             (mouseenter)="changeImage('location', images.location.hoverImg)"
@@ -36,7 +37,7 @@
           />
           <span>{{ "REMOTE" | translate }}</span>
         </div> -->
-      <!-- <div class="short_infos">
+        <!-- <div class="short_infos">
         <img
           class="koffer_img"
           [src]="images.koffer.img"
@@ -45,16 +46,17 @@
         />
         <span>{{ "TEMP" | translate }}</span>
       </div> -->
-    </div>
+      </div>
 
-    <div class="right_content_about_me">
-      <p>
-        {{ "ABOUT_ME_CONTENT" | translate }}
-      </p>
+      <div class="right_content_about_me">
+        <p>
+          {{ "ABOUT_ME_CONTENT" | translate }}
+        </p>
 
-      <a href="#contact_section" class="message_button">{{
-        "SEND_MESSAGE" | translate
-      }}</a>
+        <a href="#contact_section" class="message_button">{{
+          "SEND_MESSAGE" | translate
+        }}</a>
+      </div>
     </div>
   </div>
-</div>
+</section>

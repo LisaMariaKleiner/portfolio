@@ -1,3 +1,16 @@
+body {
+  scroll-behavior: smooth;
+}
+
+.main_description {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #c896fa;
+}
+
 .about_me_section {
   display: flex;
   position: relative;
@@ -33,6 +46,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.left_content_about_me,
+.right_content_about_me {
+  width: 90%;
+  padding: 20px;
+  flex: unset;
 }
 
 .left_content_about_me {
@@ -135,50 +155,94 @@
 }
 
 @media (max-width: 1380px) {
+  .main_description {
+    height: auto;
+    padding: 20px;
+    overflow-x: hidden;
+  }
   .about_me_section {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+  }
 
-    .right_content_about_me {
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-      flex: 2;
-      padding: 20px;
+  .content_about_me {
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  // .right_content_about_me {
+  //   justify-content: center;
+  //   align-items: center;
+  //   font-size: 18px;
+  //   padding: 20px;
+  //   text-align: center;
+  //   width: 80%;
+  // }
+
+  .left_content_about_me,
+  .right_content_about_me {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  // .left_content_about_me {
+  //   padding: 20px;
+  //   gap: 0;
+  //   width: 80%;
+
+  .left_content_about_me {
+    p {
+      font-size: 50px;
+      word-wrap: break-word;
+      margin-bottom: 20px;
+    }
+
+    .ich_bin_container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    h5 {
+      font-size: 35px;
       text-align: center;
     }
-    .left_content_about_me {
-      padding: 20px;
-      gap: 0;
+  }
 
-      p {
-        // font-size: 30px;
-        margin-bottom: 10px;
-        text-align: start;
-      }
-
-      .ich_bin_container {
-        justify-content: flex-start;
-        flex-direction: column;
-        gap: 0;
-      }
-    }
-    .ellipse_mittel {
-      display: none;
-    }
-    .ellipse_klein {
-      display: none;
-    }
+  .ellipse_mittel,
+  .ellipse_klein {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
+  .main_description {
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 0;
+  }
+
   .about_me_section {
     height: auto;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
   }
+
   .content_about_me {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 30px;
   }
 
   .about_me_section {
@@ -186,7 +250,7 @@
   }
 
   .right_content_about_me {
-    width: 80%;
+    width: 90%;
   }
 
   .left_content_about_me > p {
