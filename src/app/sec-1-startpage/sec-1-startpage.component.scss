@@ -115,7 +115,6 @@ body {
     text-decoration: none;
     color: #c896fa;
     font-size: 23px;
-    margin-right: 90px;
     width: 120px;
     min-width: 120px;
     transition: transform 0.3s;
@@ -174,7 +173,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 999;
-  padding: 20px;
+  // padding: 20px;
 
   a {
     text-decoration: none;
@@ -351,42 +350,23 @@ body {
 
   .social_media_buttons {
     right: 400px;
-    top: 530px;
+    top: 467px;
   }
 
   .navbar a {
-    font-size: 30px;
+    font-size: 20px;
   }
 
+  .menu {
+    margin-right: 30px;
+  }
   .scroll {
     font-size: 28px;
-    right: 560px;
+    right: 660px;
   }
 }
 
 @media (max-width: 1650px) {
-  .navbar {
-    padding-right: 20px;
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 20;
-    margin-left: auto;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .language-switch {
-    display: none;
-  }
 }
 
 @media (max-width: 1500px) {
@@ -404,7 +384,7 @@ body {
 
   .content {
     h2 {
-      font-size: 3rem !important;
+      font-size: 3rem;
     }
   }
 
@@ -444,7 +424,7 @@ body {
     color: #c896fa;
 
     h2 {
-      font-size: 3.5rem !important;
+      font-size: 3.5rem;
     }
 
     p {
@@ -475,6 +455,28 @@ body {
 }
 
 @media (max-width: 1150px) {
+  .navbar {
+    padding-right: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 20;
+    margin-left: auto;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .language-switch {
+    display: none;
+  }
   .profilpic {
     left: 450px;
   }
@@ -507,18 +509,17 @@ body {
 
   .content {
     top: 20px;
-    left: 60px;
+    left: 10%;
     color: white;
-    font-size: 20px !important;
+    font-size: 20px;
 
     h2 {
-      font-size: 3.5rem !important;
+      font-size: 2.5rem;
     }
 
     p {
       color: white;
-
-      font-size: 6rem;
+      font-size: 4rem;
       font-family: "Baloo", sans-serif !important;
     }
   }
@@ -555,11 +556,41 @@ body {
   .navbar {
     width: 70%;
   }
+
+  .content {
+    .h2 {
+      font-size: 2rem !important;
+    }
+  }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 860px) {
   .circle_background {
     max-width: 700px;
+  }
+
+  .profilpic {
+    height: 80vh;
+    left: auto;
+    bottom: -50px;
+    right: 20%;
+  }
+
+  .content {
+    top: 20px;
+    left: 15%;
+    color: white;
+    font-size: 20px;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      color: white;
+      font-size: 4rem;
+      font-family: "Baloo", sans-serif !important;
+    }
   }
 
   .navbar {
@@ -567,11 +598,64 @@ body {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 770px) {
   .circle_background {
     max-width: 600px;
     top: -100px;
     left: -100px;
+  }
+
+  .profilpic {
+    height: 80vh;
+    left: auto;
+    bottom: -50px;
+    right: 10%;
+  }
+  .scroll {
+    right: 5%;
+  }
+
+  .content {
+    top: 20px;
+    left: 6%;
+    color: white;
+    font-size: 20px;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      color: white;
+      font-size: 4rem;
+      font-family: "Baloo", sans-serif !important;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .profilpic {
+    height: 80vh;
+    left: auto;
+    bottom: -50px;
+    right: 10%;
+  }
+  .scroll {
+    right: 5%;
+  }
+
+  .content {
+    top: 20px;
+    left: 6%;
+    color: white;
+    font-size: 20px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -592,7 +676,7 @@ body {
   .profilpic {
     height: 80vh;
     left: auto;
-    right: -30%;
+    right: 15%;
     bottom: -100px;
   }
 
@@ -683,9 +767,6 @@ body {
     width: 35%;
   }
 
-  .main_startpage {
-    margin-bottom: 100px;
-  }
   .content {
     top: -20px;
     left: 20px;
@@ -703,5 +784,6 @@ body {
   .profilpic {
     height: 65vh;
     left: -5px;
+    bottom: -20px;
   }
 }
