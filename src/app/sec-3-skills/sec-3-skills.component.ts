@@ -56,36 +56,26 @@ export class Sec3SkillsComponent implements AfterViewInit {
       });
     }, options);
 
-    // Beobachte den Skill-Container
     if (this.skillContainer) {
       observer.observe(this.skillContainer.nativeElement);
     }
   }
 
   private startSlideInAnimation() {
-    console.log('🎯 Animation gestartet!');
-
     this.stackElements.forEach((element, index) => {
       const nativeEl = element.nativeElement;
 
-      // Zuerst das Element für die Animation vorbereiten
       const isEven = index % 2 === 0;
       const startPosition = isEven ? '-100px' : '100px';
 
-      // Initial Position setzen (außerhalb des Bildschirms)
       nativeEl.style.opacity = '0';
       nativeEl.style.transform = `translateX(${startPosition})`;
       nativeEl.style.transition = 'none';
 
       setTimeout(() => {
-        // Dann die sanfte Animation starten
         nativeEl.style.transition = 'all 0.6s ease-out';
         nativeEl.style.opacity = '1';
         nativeEl.style.transform = 'translateX(0)';
-
-        console.log(
-          `✅ Icon ${index} slided from ${isEven ? 'left' : 'right'}`
-        );
       }, index * 150);
     });
   }

@@ -86,7 +86,6 @@ export class Sec6ContactComponent implements OnInit {
         .post(this.post.endPoint, formData, this.post.options)
         .subscribe({
           next: (response: any) => {
-            console.log('Server Response:', response);
             this.snackBar.open('Nachricht wurde gesendet!', '', {
               duration: 3000,
               panelClass: ['custom-snackbar'],
