@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 
 .impressum {
@@ -16,9 +16,54 @@
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0 100px;
+  height: 100vh;
 
   a {
     text-decoration: none;
+  }
+
+  .impressum_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px 0;
+    gap: 40px;
+  }
+
+  .impressum_left,
+  .impressum_right {
+    flex: 1;
+    text-align: center;
+
+    h2 {
+      color: #c896fa;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    p {
+      color: #3b3b3b;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .impressum_divider {
+    width: 2px;
+    height: 120px;
+    background-color: #c896fa;
+    margin: 0 20px;
+    border-radius: 1px;
+  }
+
+  .impressum_content {
+    text-align: center;
+  }
+
+  .impressum_contact {
+    text-align: center;
   }
 }
 
@@ -40,16 +85,52 @@ app-sec-1-startpage {
   padding: 5px;
   border: 1px solid #c896fa;
   cursor: pointer;
+  margin-block-start: 0;
 
   &:hover {
     background-color: white;
     color: #c896fa;
   }
+
+  p {
+    margin: 5px;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .impressum {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 20px;
+  }
+
+  .impressum_container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .impressum_divider {
+    width: 80% !important;
+    height: 2px !important;
+    margin: 0 auto !important;
+  }
+
+  .impressum_left,
+  .impressum_right {
+    text-align: center;
+  }
+
   .back_to_start {
     padding: 5px;
     margin-bottom: 29px;
   }
+}
+
+.footer {
+  height: 100px;
 }
