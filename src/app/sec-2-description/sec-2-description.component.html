@@ -1,5 +1,6 @@
 <section class="main_description no-select">
   <div id="about_me_section" class="about_me_section no-select">
+    <!-- Existing ellipses -->
     <img
       class="ellipse_mittel"
       src="../../assets/img/Ellipse-mittel.svg"
@@ -11,6 +12,26 @@
       src="../../assets/img/Ellipse-klein.svg"
       alt="bubble"
     />
+
+    <!-- Animated purple orbs -->
+    <div class="animated-orbs">
+      <div
+        class="orb orb-1"
+        [style.transform]="'translateY(' + orbPositions.orb1 + 'px)'"
+      ></div>
+      <div
+        class="orb orb-2"
+        [style.transform]="'translateY(' + orbPositions.orb2 + 'px)'"
+      ></div>
+      <div
+        class="orb orb-3"
+        [style.transform]="'translateY(' + orbPositions.orb3 + 'px)'"
+      ></div>
+      <div
+        class="orb orb-4"
+        [style.transform]="'translateY(' + orbPositions.orb4 + 'px)'"
+      ></div>
+    </div>
 
     <div
       class="content_about_me"

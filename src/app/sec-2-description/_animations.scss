@@ -1,0 +1,202 @@
+// Animation Keyframes für sec-2-description
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(10px) rotate(1deg);
+  }
+  50% {
+    transform: translateX(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateX(-10px) rotate(0.5deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(200, 150, 250, 0.4),
+      0 0 40px rgba(200, 150, 250, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(200, 150, 250, 0.8),
+      0 0 60px rgba(200, 150, 250, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(200, 150, 250, 0.6),
+      0 0 40px rgba(200, 150, 250, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 35px rgba(200, 150, 250, 0.9),
+      0 0 70px rgba(200, 150, 250, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+}
+
+// Orb Animation Mixins
+@mixin orb-base {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #e298ff, #c896fa, #9d5bd3);
+  box-shadow: 0 0 20px rgba(200, 150, 250, 0.6),
+    0 0 40px rgba(200, 150, 250, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  animation: floating 6s ease-in-out infinite,
+    glow 3s ease-in-out infinite alternate;
+  transition: transform 0.1s ease-out;
+}
+
+@mixin orb-hover {
+  transform: scale(1.1) !important;
+  animation-play-state: paused;
+}
+
+@mixin orb-pulse {
+  animation: floating 6s ease-in-out infinite,
+    glow 3s ease-in-out infinite alternate, pulse 2s ease-in-out infinite;
+}
+
+// Responsive Orb Size Mixins
+@mixin orb-sizes-mobile {
+  .orb-1 {
+    width: 35px;
+    height: 35px;
+  }
+  .orb-2 {
+    width: 25px;
+    height: 25px;
+  }
+  .orb-3 {
+    width: 45px;
+    height: 45px;
+  }
+  .orb-4 {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@mixin orb-sizes-tablet {
+  .orb-1 {
+    width: 45px;
+    height: 45px;
+  }
+  .orb-2 {
+    width: 30px;
+    height: 30px;
+  }
+  .orb-3 {
+    width: 60px;
+    height: 60px;
+  }
+  .orb-4 {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@mixin orb-sizes-desktop {
+  .orb-1 {
+    width: 80px;
+    height: 80px;
+  }
+  .orb-2 {
+    width: 60px;
+    height: 60px;
+  }
+  .orb-3 {
+    width: 100px;
+    height: 100px;
+  }
+  .orb-4 {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@mixin orb-sizes-large-desktop {
+  .orb-4 {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+// Orb Position Mixins
+@mixin orb-positions-mobile {
+  .orb-1 {
+    top: 10%;
+    left: 5%;
+  }
+  .orb-2 {
+    top: 20%;
+    right: 8%;
+  }
+  .orb-3 {
+    bottom: 15%;
+    left: 2%;
+  }
+  .orb-4 {
+    top: 55%;
+    right: 5%;
+  }
+}
+
+@mixin orb-positions-tablet {
+  .orb-1 {
+    top: 8%;
+    left: 3%;
+  }
+  .orb-2 {
+    top: 15%;
+    right: 3%;
+  }
+  .orb-3 {
+    bottom: 15%;
+    left: 1%;
+  }
+  .orb-4 {
+    top: 75%;
+    right: 2%;
+  }
+}
+
+@mixin orb-visibility-large {
+  .orb-2 {
+    display: none;
+  }
+  .orb-4 {
+    top: 70%;
+  }
+}
+
+// Additional responsive mixins
+@mixin orb-size-1200 {
+  .orb-4 {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@mixin orb-position-990 {
+  .orb-3 {
+    bottom: 3%;
+  }
+}
+
+@mixin orb-visibility-760 {
+  .orb-3 {
+    display: none;
+  }
+}
+
+@mixin orb-position-345 {
+  .orb-4 {
+    bottom: 1%;
+  }
+}
