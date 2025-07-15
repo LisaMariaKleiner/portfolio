@@ -226,3 +226,60 @@ body {
     }
   }
 }
+
+@media (min-width: 300px) and (max-width: 1077px) {
+  #opinion_section {
+    .opinions {
+      -ms-overflow-style: auto !important;
+      scrollbar-width: thin !important;
+
+      &::-webkit-scrollbar {
+        height: 8px !important;
+        display: block !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1 !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #888 !important;
+        border-radius: 10px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 1076px) {
+  #opinion_section {
+    .opinions {
+      -ms-overflow-style: auto !important;
+      scrollbar-width: thin !important;
+      justify-content: flex-start;
+      padding-left: 20px;
+
+      &::-webkit-scrollbar {
+        height: 8px !important;
+        display: block !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1 !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #888 !important;
+        border-radius: 10px !important;
+      }
+    }
+
+    .review_container {
+      min-width: 300px;
+      max-width: 350px;
+      background-color: floralwhite;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+  }
+}
