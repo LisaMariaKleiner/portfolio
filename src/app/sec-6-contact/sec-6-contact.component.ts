@@ -59,18 +59,15 @@ export class Sec6ContactComponent implements OnInit {
     body: (payload: {
       name: string;
       email: string;
-      phone: number;
+      phone: string;
       message: string;
       privacyPolicy: boolean;
     }) => JSON.stringify(payload),
     options: {
       headers: {
         'Content-Type': 'application/json', // JSON-Daten im Header
-        'Content-Security-Policy': "default-src 'self'", // CSP Header
-        'X-Content-Type-Options': 'nosniff',
       },
-      responseType: 'text' as const, // Response-Typ setzen
-      withCredentials: true,
+      responseType: 'json' as const, // Response-Typ setzen
     },
   };
 
@@ -80,7 +77,7 @@ export class Sec6ContactComponent implements OnInit {
       const formData = {
         name: this.form.value.name,
         email: this.form.value.email,
-        phone: this.form.value.phone,
+        phone: this.form.value.phone || '',
         message: this.form.value.message,
         privacyPolicy: this.form.value.privacyPolicy,
       };
@@ -88,8 +85,8 @@ export class Sec6ContactComponent implements OnInit {
       this.http
         .post(this.post.endPoint, formData, this.post.options)
         .subscribe({
-          next: (response) => {
-            console.log('Formular erfolgreich gesendet');
+          next: (response: any) => {
+            console.log('Server Response:', response);
             this.snackBar.open('Nachricht wurde gesendet!', '', {
               duration: 3000,
               panelClass: ['custom-snackbar'],
@@ -97,19 +94,23 @@ export class Sec6ContactComponent implements OnInit {
             this.form.reset();
           },
           error: (error) => {
-            console.error('Fehler beim Senden:', error);
+            console.error('HTTP Fehler:', error);
+            console.error('Error Status:', error.status);
+            console.error('Error Message:', error.message);
+
             let errorMessage = 'Ein Fehler ist aufgetreten.';
 
             if (error.status === 0) {
               errorMessage =
-                'SSL/HTTPS Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung.';
+                'Verbindungsfehler. Prüfen Sie Ihre Internetverbindung.';
+            } else if (error.status === 400) {
+              errorMessage = error.error?.error || 'Ungültige Formulardaten.';
             } else if (error.status === 403) {
-              errorMessage =
-                'Zugriff verweigert. Bitte später erneut versuchen.';
+              errorMessage = 'Zugriff verweigert.';
             } else if (error.status === 404) {
-              errorMessage = 'Der Mail-Service ist aktuell nicht erreichbar.';
+              errorMessage = 'sendMail.php nicht gefunden.';
             } else if (error.status === 500) {
-              errorMessage = 'Server-Fehler beim Senden der E-Mail.';
+              errorMessage = error.error?.error || 'Server-Fehler beim Senden.';
             }
 
             this.snackBar.open(errorMessage, 'Schließen', {
