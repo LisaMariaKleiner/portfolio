@@ -4,6 +4,8 @@ import {
   AfterViewInit,
   QueryList,
   ViewChildren,
+  ElementRef,
+  ViewChild,
 } from '@angular/core';
 
 @Component({
@@ -13,7 +15,7 @@ import {
   templateUrl: './sec-3-skills.component.html',
   styleUrl: './sec-3-skills.component.scss',
 })
-export class Sec3SkillsComponent {
+export class Sec3SkillsComponent implements AfterViewInit {
   portfolioItems = [
     { img: '../../assets/img/angular.svg', text: 'Angular' },
     { img: '../../assets/img/ts.svg', text: 'TypeScript' },
@@ -29,8 +31,10 @@ export class Sec3SkillsComponent {
   ];
 
   isVisible: boolean = false;
+  isWhirlwindActive: boolean = false;
 
-  @ViewChildren('stackElement') stackElements!: QueryList<any>;
+  @ViewChildren('stackElement') stackElements!: QueryList<ElementRef>;
+  @ViewChild('skillContainer') skillContainer!: ElementRef;
 
   ngAfterViewInit() {
     this.observeSkills();
@@ -40,22 +44,49 @@ export class Sec3SkillsComponent {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5,
+      threshold: 0.3,
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            this.isVisible = true;
-          }, 300);
+          this.startSlideInAnimation();
           observer.unobserve(entry.target);
         }
       });
     }, options);
 
-    this.stackElements.forEach((element) => {
-      observer.observe(element.nativeElement);
+    // Beobachte den Skill-Container
+    if (this.skillContainer) {
+      observer.observe(this.skillContainer.nativeElement);
+    }
+  }
+
+  private startSlideInAnimation() {
+    console.log('🎯 Animation gestartet!');
+
+    this.stackElements.forEach((element, index) => {
+      const nativeEl = element.nativeElement;
+
+      // Zuerst das Element für die Animation vorbereiten
+      const isEven = index % 2 === 0;
+      const startPosition = isEven ? '-100px' : '100px';
+
+      // Initial Position setzen (außerhalb des Bildschirms)
+      nativeEl.style.opacity = '0';
+      nativeEl.style.transform = `translateX(${startPosition})`;
+      nativeEl.style.transition = 'none';
+
+      setTimeout(() => {
+        // Dann die sanfte Animation starten
+        nativeEl.style.transition = 'all 0.6s ease-out';
+        nativeEl.style.opacity = '1';
+        nativeEl.style.transform = 'translateX(0)';
+
+        console.log(
+          `✅ Icon ${index} slided from ${isEven ? 'left' : 'right'}`
+        );
+      }, index * 150);
     });
   }
 }

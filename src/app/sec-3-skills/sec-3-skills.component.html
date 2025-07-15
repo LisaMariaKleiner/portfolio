@@ -4,11 +4,12 @@
       <p>Skill set</p>
     </div>
 
-    <div class="skill_img_container">
+    <div class="skill_img_container" #skillContainer>
       <div
         class="skill_stack"
-        *ngFor="let item of portfolioItems"
+        *ngFor="let item of portfolioItems; let i = index"
         [class.animate]="isVisible"
+        [class.whirlwind]="isWhirlwindActive"
         #stackElement
       >
         <img [src]="item.img" />

@@ -1,0 +1,158 @@
+// Einfache Slide-In Animationen von links und rechts
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// Alte Animationen (behalten als Backup)
+@keyframes whirlwindSpin {
+  0% {
+    transform: rotate(0deg) scale(0.3);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes settle {
+  0% {
+    transform: translate(var(--start-x), var(--start-y))
+      rotate(var(--start-rotation)) scale(0.5);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+// Skill Stack Animation Mixins
+@mixin skill-base {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+@mixin skill-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@mixin skill-whirlwind {
+  opacity: 1;
+  transition: none;
+}
+
+@mixin skill-hover {
+  transform: scale(1.1) !important;
+  transition: transform 0.5s !important;
+}
+
+// Container Layout Mixins
+@mixin skill-container-desktop {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  width: 95%;
+  margin: 0 auto;
+
+  .skill_stack:nth-child(n + 7) {
+    grid-column: span 1;
+  }
+
+  .skill_stack:nth-child(7) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  .skill_stack:nth-child(8) {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .skill_stack:nth-child(9) {
+    grid-column: 3 / 4;
+    grid-row: 2;
+  }
+
+  .skill_stack:nth-child(10) {
+    grid-column: 4 / 5;
+    grid-row: 2;
+  }
+
+  .skill_stack:nth-child(11) {
+    grid-column: 5 / 6;
+    grid-row: 2;
+  }
+}
+
+@mixin skill-container-tablet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+// Responsive Layout Mixins
+@mixin skill-layout-desktop {
+  // Grid-Item, keine flex-Eigenschaften
+  margin: 10px 0;
+}
+
+@mixin skill-layout-tablet {
+  flex: 1 1 calc(16.666% - 15px);
+  margin: 8px 0;
+  max-width: calc(16.666% - 15px);
+}
+
+@mixin skill-layout-tablet-1024 {
+  flex: 1 1 calc(16.666% - 12px);
+  margin: 6px 0;
+  max-width: calc(16.666% - 12px);
+}
+
+@mixin skill-layout-mobile {
+  flex: 1 1 calc(20% - 15px);
+  margin: 5px 0;
+  max-width: calc(20% - 15px);
+}
+
+@mixin skill-layout-small-mobile {
+  flex: 1 1 calc(25% - 10px);
+  margin: 4px 0;
+  max-width: calc(25% - 10px);
+}
+
+@mixin skill-layout-tiny {
+  flex: 1 1 calc(33.333% - 8px);
+  margin: 3px 0;
+  max-width: calc(33.333% - 8px);
+}
+
+@mixin skill-layout-micro {
+  flex: 1 1 calc(33.333% - 6px);
+  margin: 2px 0;
+  max-width: calc(33.333% - 6px);
+}
