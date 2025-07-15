@@ -13,18 +13,21 @@ body {
   display: flex;
   flex-direction: column;
   height: 150px;
+  width: 100%;
   z-index: 10;
 }
 
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   gap: 30px;
   padding-top: 50px;
   position: relative;
   z-index: 99;
   border: 1px solid transparent;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .menu a {
@@ -40,10 +43,7 @@ body {
   border: 1px solid transparent;
 
   &:hover {
-    color: white;
-    background-color: #c896fa;
-    transform: scale(1.1);
-    border-radius: 10px;
+    transform: scale(2.1);
   }
 }
 
@@ -86,7 +86,7 @@ body {
   top: 100%;
   right: 0;
   z-index: 1000;
-  padding: 20px;
+  padding: 20px 0px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -98,10 +98,75 @@ body {
 }
 
 .dropdown_menu.open {
+  display: none;
+}
+
+.home-button {
+  position: relative;
+  z-index: 100;
+}
+
+.home-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(200, 150, 250, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: #c896fa;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(200, 150, 250, 0.3);
+  }
+}
+
+.home-icon {
+  width: 24px !important;
+  height: 24px !important;
+  color: #c896fa;
+  transition: color 0.3s ease;
+
+  .home-link:hover & {
+    color: white;
+  }
+}
+
+.left-section {
   display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.language-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (min-width: 1151px) {
+  .language-buttons {
+    display: flex;
+  }
+
+  .dropdown-language-buttons {
+    display: none !important;
+  }
 }
 
 @media (max-width: 1150px) {
+  .language-buttons {
+    display: none;
+  }
+
+  .dropdown-language-buttons {
+    display: flex !important;
+  }
+
   .navbar a {
     display: block;
   }
@@ -121,12 +186,91 @@ body {
   }
 
   .dropdown_menu.open {
-    width: 90%;
+    width: 100%;
+    height: 100vh;
+    top: -50px;
+    background-color: white;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    padding: 80px 20px 40px;
+    box-sizing: border-box;
+  }
+
+  .dropdown-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    margin-top: 10px;
+  }
+
+  .dropdown-language-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .lang-button {
+      background-color: rgba(200, 150, 250, 0.1);
+      border-radius: 8px;
+      padding: 8px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #c896fa;
+        transform: scale(1.05);
+      }
+
+      .flag-icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .left-section {
+    gap: 15px;
+  }
+
+  .home-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .home-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .language-buttons {
+    gap: 8px;
+  }
+
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 1150px) and (min-width: 769px) {
+  .home-link {
+    width: 45px !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .home-icon {
+    width: 24px !important;
+    height: 24px !important;
   }
 }
 
@@ -183,29 +327,5 @@ body {
 @media (max-width: 420px) {
   .circle_background {
     min-width: 135%;
-  }
-}
-
-@media (min-width: 1900px) {
-  .circle_background {
-    max-width: 1400px;
-    top: -300px;
-    left: -300px;
-  }
-
-  .navbar a {
-    font-size: 30px;
-  }
-}
-
-@media (min-width: 2200px) {
-  .circle_background {
-    max-width: 1600px;
-    top: -400px;
-    left: -400px;
-  }
-
-  .navbar a {
-    font-size: 35px;
   }
 }

@@ -1,20 +1,33 @@
 <section id="start" class="main_startpage no-select">
   <div class="navbar">
+    <div class="left-section">
+      <div class="home-button">
+        <a [routerLink]="['/']" class="home-link">
+          <svg class="home-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="language-buttons">
+        <button (click)="switchLanguage('de')" class="lang-button">
+          <img
+            src="../../assets/img/deutschland.png"
+            alt="Deutsch"
+            class="flag-icon"
+          />
+        </button>
+        <button (click)="switchLanguage('en')" class="lang-button">
+          <img
+            src="../../assets/img/vereinigtes-konigreich.png"
+            alt="English"
+            class="flag-icon"
+          />
+        </button>
+      </div>
+    </div>
+
     <div class="language-switch" [class.hide-language-switch]="isMenuOpen">
-      <button (click)="switchLanguage('de')" class="lang-button">
-        <img
-          src="../../assets/img/deutschland.png"
-          alt="Deutsch"
-          class="flag-icon"
-        />
-      </button>
-      <button (click)="switchLanguage('en')" class="lang-button">
-        <img
-          src="../../assets/img/vereinigtes-konigreich.png"
-          alt="English"
-          class="flag-icon"
-        />
-      </button>
       <div class="hamburger" (click)="toggleMenu()">
         <span></span>
         <span></span>
@@ -30,15 +43,34 @@
         [class.open]="isMenuOpen"
         (click)="closeMenu()"
       >
-        <a (click)="closeMenu()" href="#about_me_section">{{
-          "ABOUT_ME" | translate
-        }}</a>
-        <a (click)="closeMenu()" href="#skill_stack">{{
-          "SKILL_SET" | translate
-        }}</a>
-        <a (click)="closeMenu()" href="#project_section">{{
-          "MY_WORK" | translate
-        }}</a>
+        <div class="dropdown-navigation">
+          <a (click)="closeMenu()" href="#about_me_section">{{
+            "ABOUT_ME" | translate
+          }}</a>
+          <a (click)="closeMenu()" href="#skill_stack">{{
+            "SKILL_SET" | translate
+          }}</a>
+          <a (click)="closeMenu()" href="#project_section">{{
+            "MY_WORK" | translate
+          }}</a>
+        </div>
+
+        <div class="dropdown-language-buttons">
+          <button (click)="switchLanguage('de')" class="lang-button">
+            <img
+              src="../../assets/img/deutschland.png"
+              alt="Deutsch"
+              class="flag-icon"
+            />
+          </button>
+          <button (click)="switchLanguage('en')" class="lang-button">
+            <img
+              src="../../assets/img/vereinigtes-konigreich.png"
+              alt="English"
+              class="flag-icon"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
