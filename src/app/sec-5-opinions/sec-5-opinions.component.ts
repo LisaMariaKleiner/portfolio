@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -9,10 +9,39 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './sec-5-opinions.component.html',
   styleUrl: './sec-5-opinions.component.scss',
 })
-export class Sec5OpinionsComponent {
+export class Sec5OpinionsComponent implements OnInit, AfterViewInit {
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
+  }
+
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.setupScrollHint();
+    }, 1000);
+  }
+
+  setupScrollHint() {
+    const opinionsContainer = document.querySelector('.opinions');
+    if (opinionsContainer) {
+      opinionsContainer.addEventListener(
+        'scroll',
+        () => {
+          opinionsContainer.classList.add('scrolled');
+        },
+        { once: true }
+      );
+
+      opinionsContainer.addEventListener(
+        'touchstart',
+        () => {
+          opinionsContainer.classList.add('scrolled');
+        },
+        { once: true }
+      );
+    }
   }
 
   switchLanguage(lang: string): void {
