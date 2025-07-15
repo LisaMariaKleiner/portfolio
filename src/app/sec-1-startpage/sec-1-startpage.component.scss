@@ -93,7 +93,7 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
-  padding: 50px 20px 0 20px;
+  padding: 50px 5vw 0 20px;
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -245,7 +245,7 @@ body {
   color: #c896fa;
   z-index: 10;
   position: absolute;
-  right: 600px;
+  right: 5vw;
   bottom: 0;
 }
 
@@ -371,7 +371,7 @@ body {
   }
   .scroll {
     font-size: 28px;
-    right: 541px;
+    right: 8vw;
     height: 200px;
   }
 }
@@ -388,6 +388,24 @@ body {
 }
 
 @media (max-width: 1334px) {
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    order: 3;
+  }
+
+  .menu {
+    display: none;
+  }
+  .language-switch {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: flex-end;
+    padding-right: 5vw;
+  }
+
   .profilpic {
     left: 0px;
   }
@@ -407,7 +425,7 @@ body {
     width: 30px;
     height: auto;
     z-index: 99;
-    right: 50px;
+    right: 5vw;
     position: absolute;
 
     .shake {
@@ -420,72 +438,16 @@ body {
   }
 }
 
-@media (width: 1280px) {
+@media (min-width: 1160px) and (max-width: 1279px) {
   .profilpic {
-    left: 38px;
-    height: 100vh;
-    bottom: -148px;
-  }
-
-  .content {
-    top: 150px;
-    right: 50px;
-    left: auto;
-    color: #c896fa;
-
-    h2 {
-      font-size: 3.5rem;
-    }
-
-    p {
-      color: #c896fa;
-      font-size: 5.5rem;
-    }
-  }
-
-  .circle_background {
-    max-width: 800px;
-    top: -150px;
-    left: -100px;
-  }
-
-  .scroll {
-    right: 50px;
-    bottom: 20px;
-  }
-
-  .social_media_buttons {
-    right: 200px;
-    top: 500px;
-  }
-
-  .navbar {
-    padding: 30px 20px 0 20px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .hamburger {
-    display: flex;
-    margin-left: auto;
-    order: 3;
-  }
-
-  .menu {
-    display: none;
-  }
-  .language-switch {
-    display: none;
-  }
-
-  .navbar {
-    justify-content: flex-end;
+    left: 200px;
   }
 }
 
 @media (max-width: 1160px) {
   .navbar {
-    padding-right: 20px;
+    padding-right: 5vw;
+    width: 100%;
   }
 
   .profilpic {
@@ -510,7 +472,107 @@ body {
     width: 30px;
     height: auto;
     z-index: 15;
-    right: 43px;
+    right: 5vw;
+
+    .shake {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+  }
+
+  .content {
+    top: 20px;
+    left: 10%;
+    color: white;
+    font-size: 20px;
+
+    h2 {
+      font-size: 6.5rem;
+    }
+
+    p {
+      color: white;
+      font-size: 5rem;
+      font-family: "Baloo", sans-serif !important;
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .language-switch {
+    display: none;
+  }
+
+  .circle_background {
+    width: 1000px;
+    top: -100px;
+    left: -100px;
+  }
+
+  .content h2 {
+    font-size: 1.8rem;
+    color: white;
+  }
+
+  .main_startpage {
+    height: 100vh;
+  }
+
+  .social_media_buttons {
+    display: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    order: 3;
+  }
+
+  .menu {
+    display: none;
+  }
+  .language-switch {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 1160px) {
+  .navbar {
+    padding-right: 5vw;
+    width: 100%;
+  }
+
+  .profilpic {
+    left: 450px;
+  }
+
+  .navbar {
+    padding-right: 20px;
+    width: 93%;
+  }
+
+  .navbar a {
+    display: block;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .scroll {
+    flex-direction: column;
+    width: 30px;
+    height: auto;
+    z-index: 15;
+    right: 5vw;
 
     .shake {
       writing-mode: vertical-rl;
@@ -567,7 +629,7 @@ body {
   .navbar {
     width: 100%;
     justify-content: flex-end;
-    padding-right: 20px;
+    padding-right: 5vw;
   }
 
   .content {
@@ -577,7 +639,7 @@ body {
   }
 
   .scroll {
-    right: 50px;
+    right: 5vw;
   }
 }
 
