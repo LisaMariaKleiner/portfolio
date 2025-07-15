@@ -23,15 +23,16 @@
         </button>
       </div>
 
-      <div class="hamburger" #hamburger (click)="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
       <div class="menu">
         <a href="#about_me_section">{{ "ABOUT_ME" | translate }}</a>
         <a href="#skill_stack">{{ "SKILL_SET" | translate }}</a>
         <a href="#project_section">{{ "MY_WORK" | translate }}</a>
+      </div>
+
+      <div class="hamburger" #hamburger (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
       <div
         class="dropdown_menu"

@@ -91,7 +91,6 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 30px;
   padding: 50px 20px 0 20px;
@@ -104,6 +103,14 @@ body {
     min-width: 120px;
     text-align: center;
     white-space: nowrap;
+  }
+
+  .language-switch {
+    margin-right: auto;
+  }
+
+  .hamburger {
+    margin-left: auto;
   }
 }
 
@@ -132,14 +139,16 @@ body {
 
 .hamburger {
   display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: auto;
 
   span {
     display: block;
-    height: 4px;
+    height: 3px;
     background: #c896fa;
     border-radius: 2px;
     transition: all 0.3s;
@@ -458,13 +467,8 @@ body {
 @media (max-width: 1280px) {
   .hamburger {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 20;
     margin-left: auto;
+    order: 3;
   }
 
   .menu {
@@ -472,6 +476,10 @@ body {
   }
   .language-switch {
     display: none;
+  }
+
+  .navbar {
+    justify-content: flex-end;
   }
 }
 
@@ -501,7 +509,7 @@ body {
     flex-direction: column;
     width: 30px;
     height: auto;
-    z-index: 99;
+    z-index: 15;
     right: 43px;
 
     .shake {
@@ -557,7 +565,9 @@ body {
 
 @media (max-width: 970px) {
   .navbar {
-    width: 70%;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 20px;
   }
 
   .content {
@@ -601,7 +611,9 @@ body {
   }
 
   .navbar {
-    width: 60%;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 20px;
   }
 }
 
@@ -695,7 +707,9 @@ body {
   }
 
   .navbar {
-    width: 50%;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 20px;
   }
 }
 
@@ -718,7 +732,9 @@ body {
   }
 
   .navbar {
-    width: 40%;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 20px;
   }
 }
 
@@ -771,7 +787,9 @@ body {
   }
 
   .navbar {
-    width: 35%;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 20px;
   }
 
   .content {
