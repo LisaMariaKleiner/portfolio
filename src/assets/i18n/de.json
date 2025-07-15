@@ -17,6 +17,7 @@
   "JOINTEXT": "Ein vom Kanban-System inspirierter Aufgabenmanager. Erstelle und organisiere deine Aufgaben mithilfe von Drag-and-Drop-Funktionen oder weise Benutzer und Kategorien zu.",
   "POLLOLOCOTEXT": "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
   "STALLMANAGERTEXT": "Dokumentiere Ein- und Ausgänge von Heu, Wasser und Einstreu. Lass dir Statistiken über den monatlichen Verbrauch anzeigen und exportiere deine Daten als CSV-Datei. Lege Kundenpferde an und verwalte diese. Erstelle Rechnungen und sende sie per E-Mail. Manage deine Mitarbeiter und weise ihnen Aufgaben zu.",
+  "STALLMANAGERTEXT2": " Codeeinsicht auf Anfrage, da sich das Projekt in Produktion befindet.",
   "TEAMPLAYER": "Teamplayer gesucht?",
   "TEAMPLAYERTEXT": "Das sagen meine Teampartner über mich",
   "reviews": [
@@ -44,6 +45,7 @@
   "ERRORLETTER": "Nur Buchstaben und Leerzeichen sind erlaubt.",
   "ERRORMAIL": "Bitte gib eine gültige E-Mail-Adresse ein.",
   "PHONE": "Telefonnummer",
+  "ERRORPHONE": "Bitte gib eine gültige Telefonnummer ein.",
   "CONTACTMESSAGE": "Nachricht",
   "PLACEHOLDERMESSAGE": "Deine Nachricht an mich...",
   "ERRORMESSAGE": "Bitte gib deine Nachricht ein.",

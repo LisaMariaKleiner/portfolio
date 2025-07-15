@@ -18,6 +18,7 @@
   "JOINTEXT": "A task manager inspired by the Kanban system. Create and organize your tasks using drag-and-drop functionality or assign users and categories.",
   "POLLOLOCOTEXT": "Jump, run, and throw game based on an object-oriented approach. Help Pepe find coins and Tabasco salsa to fight against the crazy hen.",
   "STALLMANAGERTEXT": "Document the inputs and outputs of hay, water and bedding. View statistics about monthly consumption and export your data as CSV file. Create and manage client horses. Generate invoices and send them via email. Manage your employees and assign tasks to them.",
+  "STALLMANAGERTEXT2": "Code access upon request, as the project is in production.",
   "TEAMPLAYER": "Need a teamplayer?",
   "TEAMPLAYERTEXT": "Here what my colleagues said about me",
 
@@ -42,6 +43,7 @@
   "ERRORLETTER": "Only letters and spaces are allowed.",
   "ERRORMAIL": "Please enter a valid email address.",
   "PHONE": "Phone number",
+  "ERRORPHONE": "Please enter a valid phone number.",
   "CONTACTMESSAGE": "Message",
   "PLACEHOLDERMESSAGE": "Your message here...",
   "ERRORMESSAGE": "Please enter your message.",
