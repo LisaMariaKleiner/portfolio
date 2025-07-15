@@ -1,6 +1,7 @@
 body {
   height: 100vh;
   scroll-behavior: smooth;
+  color: #3b3b3b;
 }
 
 .outer_container {
@@ -36,6 +37,7 @@ button:disabled {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #3b3b3b;
 
   background: linear-gradient(to bottom, white, rgba(200, 150, 250, 0.4));
 
@@ -53,6 +55,7 @@ button:disabled {
 
   .datenschutz {
     display: flex;
+    flex-direction: column-reverse;
 
     input {
       height: 20px;

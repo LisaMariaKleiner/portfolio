@@ -74,9 +74,18 @@
             <input
               placeholder="0123 12345678"
               id="phone"
+              type="number"
               formControlName="phone"
-              pattern="\d*"
+              pattern="^[0-9]*$"
             />
+            <div
+              class="error"
+              *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid"
+            >
+              <span *ngIf="form.get('phone')?.errors?.['phone']">
+                {{ "ERRORPHONE" | translate }}
+              </span>
+            </div>
           </div>
 
           <div>
@@ -108,7 +117,7 @@
               required
             />
             <label for="privacyPolicy">
-              <a href="/legal-notice-dialog">{{
+              <a [routerLink]="['/privacyPolicy']">{{
                 "PRIVACYPOLICY" | translate
               }}</a>
               {{ "PRIVACYPOLICYTEXT" | translate }}.
