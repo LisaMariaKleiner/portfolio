@@ -255,7 +255,7 @@ body {
     .opinions {
       -ms-overflow-style: auto !important;
       scrollbar-width: thin !important;
-      justify-content: flex-start;
+      justify-content: flex-center;
       padding-left: 20px;
 
       &::-webkit-scrollbar {
