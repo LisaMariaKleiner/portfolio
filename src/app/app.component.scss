@@ -9,17 +9,12 @@
   overflow-x: hidden;
 }
 
-// .app-container {
-//   max-width: 1920px;
-// }
-
 router-outlet {
   flex: 1;
 }
 
 .language-switch {
   display: flex;
-  justify-content: flex-end;
   margin: 1rem;
 
   button {
