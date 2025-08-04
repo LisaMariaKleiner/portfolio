@@ -1,0 +1,11 @@
+# ...existing code...
+RewriteEngine On
+
+# Erlaube den Zugriff auf statische Dateien im assets-Ordner
+RewriteCond %{REQUEST_URI} ^/assets/
+RewriteRule ^ - [L]
+
+# Angular Fallback für alle anderen Routen
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
