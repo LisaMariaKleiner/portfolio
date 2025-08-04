@@ -3,15 +3,15 @@
 
   <div class="section_container">
     <div class="navbar">
-      <label class="switch" [class.hide-dark-mode]="isMenuOpen">
-        <input
-          type="checkbox"
-          [checked]="themeService.isDarkMode$ | async"
-          (change)="toggleDarkMode()"
-        />
-        <span class="slider"></span>
-      </label>
       <div class="language-switch" [class.hide-language-switch]="isMenuOpen">
+        <label class="switch" [class.hide-dark-mode]="isMenuOpen">
+          <input
+            type="checkbox"
+            [checked]="themeService.isDarkMode$ | async"
+            (change)="toggleDarkMode()"
+          />
+          <span class="slider"></span>
+        </label>
         <button (click)="switchLanguage('de')" class="lang-button">
           <img
             src="assets/img/deutschland.png"

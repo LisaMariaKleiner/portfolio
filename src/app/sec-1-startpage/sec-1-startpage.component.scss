@@ -114,10 +114,11 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 20px;
   align-items: center;
   gap: 30px;
-  padding: 50px 5vw 0 20px;
+  padding-top: 50px;
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -129,9 +130,9 @@ body {
     white-space: nowrap;
   }
 
-  .language-switch {
-    margin-right: auto;
-  }
+  // .language-switch {
+  //   margin-right: auto;
+  // }
 
   .hamburger {
     margin-left: auto;
@@ -428,7 +429,7 @@ input:checked + .slider:before {
   }
   .circle_background {
     width: 1800px !important;
-    left: 600px !important;
+    left: 370px !important;
   }
 }
 
