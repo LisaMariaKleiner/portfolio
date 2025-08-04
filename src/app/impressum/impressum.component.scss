@@ -67,6 +67,12 @@
   }
 }
 
+// Darkmode: Graue Schrift weiß darstellen
+:host-context(.dark-theme) .impressum .impressum_left p,
+:host-context(.dark-theme) .impressum .impressum_right p {
+  color: #fff;
+}
+
 app-sec-7-footer {
   bottom: 0;
   width: 100%;
