@@ -40,6 +40,7 @@ button:disabled {
   color: #3b3b3b;
 
   background: linear-gradient(to bottom, white, rgba(200, 150, 250, 0.4));
+  transition: background 0.3s ease, color 0.3s ease;
 
   .halb_ellipse {
     position: absolute;
@@ -98,7 +99,25 @@ button:disabled {
       font-size: 20px;
       font-weight: bold;
     }
+
+    p {
+      transition: color 0.3s ease;
+    }
+
+    span {
+      transition: color 0.3s ease;
+    }
   }
+}
+
+.contact_container.dark-theme {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 50%,
+    var(--bg-gradient-start) 100%
+  );
+  color: #ffffff !important;
 }
 
 .form_container {
@@ -118,6 +137,7 @@ button:disabled {
   h2 {
     text-align: center;
     color: #333;
+    transition: color 0.3s ease;
   }
 
   div {
@@ -127,6 +147,7 @@ button:disabled {
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     input,
@@ -231,6 +252,43 @@ button:disabled {
   padding: 16px 24px !important;
   box-sizing: border-box !important;
   margin: 0 !important;
+}
+
+/* Dark Mode: Text Secondary Farbe für alle dunklen Texte */
+:host-context(.dark-theme) .contact_description p,
+:host-context(.dark-theme) .contact_description span,
+:host-context(.dark-theme) .contact_description h2 {
+  color: var(--text-secondary) !important;
+}
+
+:host-context(.dark-theme) .contact-form h2,
+:host-context(.dark-theme) .contact-form label,
+:host-context(.dark-theme) .contact-form p {
+  color: var(--text-secondary) !important;
+}
+
+:host-context(.dark-theme) .pflichtfelder {
+  color: var(--text-secondary) !important;
+}
+
+:host-context(.dark-theme) .contact-form input,
+:host-context(.dark-theme) .contact-form textarea {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--text-accent);
+}
+
+:host-context(.dark-theme) .datenschutz label {
+  color: var(--text-secondary) !important;
+}
+
+:host-context(.dark-theme) .datenschutz a {
+  color: var(--text-accent) !important;
+}
+
+/* Spezifisch für alle Form-Labels */
+:host-context(.dark-theme) .contact-form div label {
+  color: var(--text-secondary) !important;
 }
 
 @media (min-width: 1024px) {

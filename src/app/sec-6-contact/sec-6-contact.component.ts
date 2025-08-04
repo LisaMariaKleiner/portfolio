@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-sec-6-contact',
@@ -30,7 +31,8 @@ export class Sec6ContactComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private snackBar: MatSnackBar,
-    private translate: TranslateService
+    private translate: TranslateService,
+    public themeService: ThemeService
   ) {
     this.translate.setDefaultLang('de');
     this.translate.use('de');

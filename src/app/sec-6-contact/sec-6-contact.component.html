@@ -1,4 +1,8 @@
-<section id="contact_section" class="contact_container">
+<section
+  id="contact_section"
+  class="contact_container"
+  [class.dark-theme]="themeService.isDarkMode$ | async"
+>
   <div class="contact_main_container">
     <div class="contact_description">
       <h1>{{ "CONTACT" | translate }}</h1>
