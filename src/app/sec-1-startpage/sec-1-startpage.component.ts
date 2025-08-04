@@ -72,7 +72,6 @@ export class Sec1StartpageComponent implements OnInit, OnDestroy {
       { threshold: 0 }
     );
 
-    // Beobachte das Hamburger-Menü nach dem View Init
     setTimeout(() => {
       if (this.hamburger) {
         this.observer?.observe(this.hamburger.nativeElement);
