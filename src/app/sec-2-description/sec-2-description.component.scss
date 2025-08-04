@@ -2,7 +2,7 @@
 
 body {
   scroll-behavior: smooth;
-  width: 100vw;
+  // width: 100vw;
 }
 
 .main_description {
@@ -21,6 +21,7 @@ body {
   align-items: center;
   height: 100vh;
   color: #c896fa;
+  max-width: 1920px;
 }
 
 .ellipse_mittel {
@@ -124,6 +125,7 @@ body {
   p {
     color: #3b3b3b;
     text-align: justify;
+    transition: color 0.3s ease;
   }
 
   .message_button {
@@ -145,6 +147,11 @@ body {
       color: white;
     }
   }
+}
+
+/* Dark Mode: Text Secondary Farbe für rechten Content */
+:host-context(.dark-theme) .right_content_about_me p {
+  color: var(--text-secondary);
 }
 
 // Animated purple orbs
@@ -357,4 +364,55 @@ body {
 
 @media (min-width: 1920px) {
   @include orb-sizes-large-desktop;
+}
+
+.extra-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(200, 150, 250, 0.45);
+    box-shadow: 0 0 30px 10px rgba(200, 150, 250, 0.25);
+    animation: floatBubble 8s infinite ease-in-out alternate;
+  }
+
+  .bubble-1 {
+    width: 80px;
+    height: 80px;
+    left: 5vw;
+    top: 10vh;
+    animation-delay: 0s;
+  }
+
+  .bubble-2 {
+    width: 120px;
+    height: 120px;
+    left: 80vw;
+    top: 25vh;
+    animation-delay: 2s;
+  }
+
+  .bubble-3 {
+    width: 60px;
+    height: 60px;
+    left: 40vw;
+    top: 60vh;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-40px);
+  }
 }

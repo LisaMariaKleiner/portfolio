@@ -1,12 +1,13 @@
 <section class="main_description no-select">
-  <div id="about_me_section" class="about_me_section no-select">
-    <!-- Existing ellipses -->
-    <img
-      class="ellipse_mittel"
-      src="../../assets/img/Ellipse-mittel.svg"
-      alt="bubble"
-    />
+  <!-- Zusätzliche lila Bubbles außerhalb der about_me_section -->
+  <div class="extra-bubbles">
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
+    <!-- Weitere Bubbles nach Bedarf -->
+  </div>
 
+  <div id="about_me_section" class="about_me_section no-select">
     <img
       class="ellipse_klein"
       src="../../assets/img/Ellipse-klein.svg"
@@ -39,34 +40,6 @@
     >
       <div class="left_content_about_me">
         <p>{{ "START" | translate }}</p>
-        <!-- <h5>{{ "IAM" | translate }}</h5>
-      <div class="ich_bin_container"> -->
-        <!-- <div class="short_infos">
-          <img
-            [src]="images.location.img"
-            (mouseenter)="changeImage('location', images.location.hoverImg)"
-            (mouseleave)="resetImage('location')"
-          />
-          <span>{{ "LOCAL" | translate }}</span>
-        </div>
-        <div class="short_infos">
-          <img
-            class="pc_img"
-            [src]="images.remote.img"
-            (mouseenter)="changeImage('remote', images.remote.hoverImg)"
-            (mouseleave)="resetImage('remote')"
-          />
-          <span>{{ "REMOTE" | translate }}</span>
-        </div> -->
-        <!-- <div class="short_infos">
-        <img
-          class="koffer_img"
-          [src]="images.koffer.img"
-          (mouseenter)="changeImage('koffer', images.koffer.hoverImg)"
-          (mouseleave)="resetImage('koffer')"
-        />
-        <span>{{ "TEMP" | translate }}</span>
-      </div> -->
       </div>
 
       <div class="right_content_about_me">
