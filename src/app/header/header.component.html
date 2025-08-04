@@ -1,4 +1,4 @@
-<section id="start" class="main_startpage no-select">
+<section id="start" class="main_startpage no-select header-section">
   <div class="navbar">
     <div class="left-section">
       <div class="home-button">
@@ -25,6 +25,15 @@
           />
         </button>
       </div>
+
+      <label class="switch" [class.hide-dark-mode]="isMenuOpen">
+        <input
+          type="checkbox"
+          [checked]="themeService.isDarkMode$ | async"
+          (change)="toggleDarkMode()"
+        />
+        <span class="slider"></span>
+      </label>
     </div>
 
     <div class="language-switch" [class.hide-language-switch]="isMenuOpen">

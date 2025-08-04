@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,8 @@ export class HeaderComponent {
 
   constructor(
     private languageService: LanguageService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    public themeService: ThemeService
   ) {
     this.translate.addLangs(['en', 'de']);
     this.translate.setDefaultLang('de');
@@ -66,5 +68,9 @@ export class HeaderComponent {
 
   closeMenu(): void {
     this.isMenuOpen = false;
+  }
+
+  toggleDarkMode(): void {
+    this.themeService.toggleDarkMode();
   }
 }
