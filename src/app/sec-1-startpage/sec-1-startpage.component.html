@@ -1,8 +1,16 @@
 <section id="start" class="main_startpage no-select">
   <img src="assets/img/Ellipse 10.svg" alt="" class="circle_background" />
 
-  <div class="section-container">
+  <div class="section_container">
     <div class="navbar">
+      <label class="switch" [class.hide-dark-mode]="isMenuOpen">
+        <input
+          type="checkbox"
+          [checked]="themeService.isDarkMode$ | async"
+          (change)="toggleDarkMode()"
+        />
+        <span class="slider"></span>
+      </label>
       <div class="language-switch" [class.hide-language-switch]="isMenuOpen">
         <button (click)="switchLanguage('de')" class="lang-button">
           <img
@@ -61,6 +69,11 @@
               class="flag-icon"
             />
           </button>
+          <button (click)="toggleDarkMode()" class="dark-mode-toggle-dropdown">
+            <span class="dark-mode-icon">{{
+              (themeService.isDarkMode$ | async) ? "☀️" : "🌙"
+            }}</span>
+          </button>
         </div>
       </div>
     </div>
@@ -87,7 +100,7 @@
       /></a>
     </div>
     <div class="image-container">
-      <img src="assets/img/IMG_8523.PNG" alt="" class="profilpic" />
+      <img src="assets/img/profilpic_startpage.png" alt="" class="profilpic" />
     </div>
   </div>
 </section>

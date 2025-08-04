@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-sec-1-startpage',
@@ -22,7 +23,10 @@ export class Sec1StartpageComponent implements OnInit, OnDestroy {
   private observer: IntersectionObserver | undefined;
   isMenuOpen = false;
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    public themeService: ThemeService
+  ) {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
   }
@@ -109,5 +113,9 @@ export class Sec1StartpageComponent implements OnInit, OnDestroy {
     if (!clickedInside && this.isMenuOpen) {
       this.isMenuOpen = false;
     }
+  }
+
+  toggleDarkMode(): void {
+    this.themeService.toggleDarkMode();
   }
 }
