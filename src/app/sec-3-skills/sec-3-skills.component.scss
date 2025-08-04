@@ -19,6 +19,17 @@
   background-color: #c896fa;
   padding: 20px;
   box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+/* Dark Mode: schwarz-lila-schwarz Verlauf verwenden */
+:host-context(.dark-theme) .skills_content_container {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 50%,
+    var(--bg-gradient-start) 100%
+  );
 }
 
 .title_skills {
