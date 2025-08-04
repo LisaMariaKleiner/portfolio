@@ -4,13 +4,13 @@ body {
   scroll-behavior: smooth;
 }
 
-section {
-  width: 100vw;
+.projects_section_container {
+  // width: 100vw;
   overflow-x: hidden;
   box-sizing: border-box;
-}
-
-.projects_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(
     to bottom,
     white 0%,
@@ -20,6 +20,23 @@ section {
     white 100%
   );
   color: #3b3b3b;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.projects_container {
+}
+
+/* Dark Mode: Verlauf und Textfarbe anpassen */
+:host-context(.dark-theme) .projects_section_container {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-start) 20%,
+    var(--bg-gradient-end) 50%,
+    var(--bg-gradient-start) 80%,
+    var(--bg-gradient-start) 100%
+  );
+  color: var(--text-primary);
 }
 
 p {
@@ -56,6 +73,7 @@ a {
 .anthrazit {
   color: #3b3b3b;
   font-size: 22px;
+  transition: color 0.3s ease;
 }
 
 .baloo {
@@ -253,6 +271,17 @@ a {
       color: #c896fa;
     }
   }
+}
+
+/* Dark Mode: Text Secondary Farbe für dunkle Texte */
+:host-context(.dark-theme) .anthrazit {
+  color: var(--text-secondary);
+}
+
+:host-context(.dark-theme) .join_text,
+:host-context(.dark-theme) .polloloco_text,
+:host-context(.dark-theme) .horsemanager_text {
+  color: var(--text-secondary);
 }
 
 @media only screen and (max-width: 1150px) {
