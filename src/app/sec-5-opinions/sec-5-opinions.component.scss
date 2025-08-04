@@ -23,6 +23,7 @@ body {
   flex-direction: column;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
   color: #3b3b3b;
 
   p {
@@ -34,6 +35,7 @@ body {
     color: white;
     font-size: 45px;
     margin: 0;
+    margin-top: 50px;
   }
 
   h3 {
@@ -53,6 +55,20 @@ body {
     background: #c896fa;
     gap: 20px;
     height: auto;
+    transition: background 0.3s ease;
+    margin-top: 150px;
+    margin-bottom: 100px;
+  }
+
+  /* Dark Mode: schwarz-lila-schwarz Verlauf für Opinion Content */
+  :host-context(.dark-theme) #opinion_section .opinion_content {
+    background-color: black;
+  }
+
+  // Schriftfarbe für h3 und p im Dark Mode
+  :host-context(.dark-theme) #opinion_section h3,
+  :host-context(.dark-theme) #opinion_section .teamplayer_text {
+    color: white;
   }
 
   .opinions {
@@ -62,6 +78,7 @@ body {
     overflow-x: auto;
     gap: 60px;
     padding: 16px;
+    margin-bottom: 50px;
     scroll-snap-type: x mandatory;
     width: 100%;
     max-width: 100%;
@@ -109,6 +126,14 @@ body {
   width: 80%;
   flex: 0 0 auto;
   box-sizing: border-box;
+}
+
+@media (min-width: 3840px) {
+  #opinion_section {
+    .opinion_content {
+      margin-top: 250px;
+    }
+  }
 }
 
 @media (max-width: 1075px) {
@@ -169,6 +194,7 @@ body {
 
     .opinions {
       padding: 10px;
+      margin-bottom: 30px;
       margin: 0;
       width: 100%;
       scroll-padding: 0 10px;
@@ -230,6 +256,7 @@ body {
 @media (min-width: 300px) and (max-width: 1077px) {
   #opinion_section {
     .opinions {
+      margin-bottom: 30px;
       -ms-overflow-style: auto !important;
       scrollbar-width: thin !important;
 
@@ -250,6 +277,39 @@ body {
   }
 }
 
+@media (min-width: 1076px) {
+  #opinion_section {
+    .opinions {
+      -ms-overflow-style: auto !important;
+      scrollbar-width: thin !important;
+      justify-content: flex-center;
+      padding-left: 20px;
+
+      &::-webkit-scrollbar {
+        height: 8px !important;
+        display: block !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1 !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #888 !important;
+        border-radius: 10px !important;
+      }
+    }
+
+    .review_container {
+      min-width: 300px;
+      max-width: 350px;
+      background-color: floralwhite;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+  }
+}
 @media (min-width: 1076px) {
   #opinion_section {
     .opinions {
