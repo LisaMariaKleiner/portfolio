@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from './services/theme.service';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -16,13 +17,25 @@ export class AppComponent {
 
   constructor(
     private translate: TranslateService,
-    public themeService: ThemeService
+    public themeService: ThemeService,
+    private router: Router,
+    private languageService: LanguageService
   ) {
-    this.translate.setDefaultLang('de');
+    const lang = localStorage.getItem('selectedLanguage') || 'de';
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const lang = localStorage.getItem('selectedLanguage') || 'de';
+        this.languageService.switchLanguage(lang);
+      }
+    });
   }
 
   switchLanguage(lang: string): void {
     this.translate.use(lang);
+    localStorage.setItem('selectedLanguage', lang);
   }
 
   toggleDarkMode(): void {
