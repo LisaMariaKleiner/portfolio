@@ -13,8 +13,9 @@ import { Nl2brPipe } from '../pipes/context.pipe';
 })
 export class privacyPolicyComponent implements OnInit {
   constructor(private translate: TranslateService) {
-    translate.setDefaultLang('de');
-    translate.use('de');
+    const lang = localStorage.getItem('selectedLanguage') || 'de';
+    translate.setDefaultLang(lang);
+    translate.use(lang);
   }
 
   ngOnInit(): void {
