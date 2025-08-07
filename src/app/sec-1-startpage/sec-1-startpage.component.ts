@@ -27,15 +27,21 @@ export class Sec1StartpageComponent implements OnInit, OnDestroy {
     private translate: TranslateService,
     public themeService: ThemeService
   ) {
-    this.translate.setDefaultLang('de');
-    this.translate.use('de');
+    const lang = localStorage.getItem('selectedLanguage') || 'de';
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
   }
 
   switchLanguage(lang: string): void {
     this.translate.use(lang);
+    localStorage.setItem('selectedLanguage', lang);
   }
 
   ngOnInit(): void {
+    const lang = localStorage.getItem('selectedLanguage') || 'de';
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
+
     document.addEventListener('DOMContentLoaded', function () {
       const socialMediaButtons = document.querySelector(
         '.social_media_buttons'
