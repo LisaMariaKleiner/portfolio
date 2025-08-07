@@ -9,7 +9,7 @@ body {
 }
 
 .main_startpage {
-  width: 100vw;
+  // width: 100vw;
   min-width: 100vw;
   margin: 0;
   padding: 0;
@@ -32,8 +32,6 @@ body {
   position: relative;
   z-index: 99;
   border: 1px solid transparent;
-  padding-right: 50px;
-  padding-left: 50px;
 }
 
 .menu a {
@@ -257,11 +255,6 @@ body {
 
   .language-buttons {
     gap: 8px;
-  }
-
-  .navbar {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 }
 
