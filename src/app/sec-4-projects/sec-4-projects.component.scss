@@ -432,7 +432,7 @@ a {
     .horsemanager_right .join_right,
     .polloloco_right {
       p {
-        max-width: 100vw;
+        max-width: 80%;
       }
     }
   }
@@ -443,5 +443,22 @@ a {
 
   .projects_subtitle {
     font-size: 16px;
+  }
+
+  .pc,
+  .desktopPolloLoco {
+    width: 80% !important;
+  }
+
+  .polloloco_text,
+  .horsemanager_text {
+    width: 90% !important;
+    font-size: 16px !important;
+  }
+
+  .horsemanager_container {
+    p {
+      font-size: 16px !important;
+    }
   }
 }
